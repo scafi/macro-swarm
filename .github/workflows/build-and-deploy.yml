@@ -81,7 +81,7 @@ jobs:
     steps:
       - uses: danysk/action-checkout@0.2.14
         with:
-          token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: olafurpg/setup-scala@v14
         with:
           java-version: openjdk@1.17
@@ -96,7 +96,7 @@ jobs:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - if: steps.release.outputs.has-released
       #  run: sbt unidoc
       # - if: steps.release.outputs.has-released
