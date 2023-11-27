@@ -8,7 +8,8 @@ abstract class MacroSwarmSupport[E <: MacroSwarmSupport.Dependency](val incarnat
     extends FastBlocks[E]
     with CoreMovement[E]
     with CoordinatedMovement[E]
-    with LeaderBasedMovement[E] {}
+    with LeaderBasedMovement[E]
+    with CollectivePlanner[E] {}
 
 object MacroSwarmSupport {
   type Dependency = Incarnation with StandardLibrary with RichLanguage
