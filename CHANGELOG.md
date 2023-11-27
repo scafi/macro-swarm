@@ -1,3 +1,15 @@
+## [1.0.1](https://github.com/scafi/macro-swarm/compare/v1.0.0...v1.0.1) (2023-11-27)
+
+
+### Documentation
+
+* short description for macro swarm ([513f0da](https://github.com/scafi/macro-swarm/commit/513f0da7114346e834361fcd61b4a05390729f94))
+
+
+### Build and continuous integration
+
+* add extensive testing ([d16593e](https://github.com/scafi/macro-swarm/commit/d16593ecdc608fd6f590beca139015d73acb9539))
+
 ## 1.0.0 (2023-11-27)
 
 
