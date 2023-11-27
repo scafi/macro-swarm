@@ -7,13 +7,13 @@ inThisBuild(
     Test / publishArtifact := false,
     pomIncludeRepository := { _ => false }, // no repositories show up in the POM file
     licenses := Seq("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0")),
-    /*homepage := Some(url("https://scafi.github.io/")),
+    homepage := Some(url("https://github.com/scafi/macro-swarm")),
     scmInfo := Some(
       ScmInfo(
-        url("https://github.com/scafi/scafi"),
-        "scm:git:git@github.org:scafi/scafi.git"
+        url("https://github.com/scafi/macro-swarm"),
+        "scm:git:git@github.com:scafi/macro-swarm.git"
       )
-    ),*/
+    ),
     developers := List(
       Developer(
         id = "cric96",
@@ -53,6 +53,5 @@ lazy val `macro-swarm` = project
     publishArtifact := false,
     publish := {},
     publishLocal := {},
-    packagedArtifacts := Map.empty,
-
+    packagedArtifacts := Map.empty
   )
