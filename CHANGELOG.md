@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/scafi/macro-swarm/compare/v1.0.2...v1.1.0) (2023-11-27)
+
+
+### Features
+
+* fix the build information ([288fdea](https://github.com/scafi/macro-swarm/commit/288fdea87fa71e44502462d8eec4b752f2592718))
+
 ## [1.0.2](https://github.com/scafi/macro-swarm/compare/v1.0.1...v1.0.2) (2023-11-27)
 
 
