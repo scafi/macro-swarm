@@ -27,6 +27,7 @@ inThisBuild(
 )
 
 lazy val core = project.settings(
+  organization := "it.unibo.scafi",
   name := "macro-swarm-core",
   scalaVersion := defaultScalaVersion,
   libraryDependencies += "it.unibo.scafi" %% "scafi-core" % "1.1.7"
@@ -36,6 +37,22 @@ lazy val alchemist = project
   .dependsOn(core)
   .settings(
     scalaVersion := defaultScalaVersion,
+    organization := "it.unibo.scafi",
     name := "macro-swarm-alchemist",
     libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "28.5.4"
+  )
+
+lazy val `macro-swarm` = project
+  .in(file("."))
+  .aggregate(core, alchemist)
+  .settings(
+    organization := "it.unibo.scafi",
+    name := "macro-swarm",
+    scalaVersion := defaultScalaVersion,
+    // Avoid double publishing
+    publishArtifact := false,
+    publish := {},
+    publishLocal := {},
+    packagedArtifacts := Map.empty,
+
   )
