@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/scafi/macro-swarm/compare/v1.1.1...v1.2.0) (2023-11-27)
+
+
+### Features
+
+* add collective planning to macro swarm support ([82b58ef](https://github.com/scafi/macro-swarm/commit/82b58ef05c797e87539793958c3701e2b2b50c2d))
+
 ## [1.1.1](https://github.com/scafi/macro-swarm/compare/v1.1.0...v1.1.1) (2023-11-27)
 
 
