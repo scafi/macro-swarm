@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/scafi/macro-swarm/compare/v1.1.0...v1.1.1) (2023-11-27)
+
+
+### Documentation
+
+* reduce the logo size ([d8c5016](https://github.com/scafi/macro-swarm/commit/d8c5016360bc6633a0cc62315af784f3317e7272))
+
 ## [1.1.0](https://github.com/scafi/macro-swarm/compare/v1.0.2...v1.1.0) (2023-11-27)
 
 
