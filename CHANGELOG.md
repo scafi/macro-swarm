@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/scafi/macro-swarm/compare/v1.0.1...v1.0.2) (2023-11-27)
+
+
+### Documentation
+
+* update ci and secrets ([35252d3](https://github.com/scafi/macro-swarm/commit/35252d382326c50551d1cc134d4955b5bd2070ed))
+
 ## [1.0.1](https://github.com/scafi/macro-swarm/compare/v1.0.0...v1.0.1) (2023-11-27)
 
 
