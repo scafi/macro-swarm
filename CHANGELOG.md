@@ -1,3 +1,15 @@
+## [1.2.1](https://github.com/scafi/macro-swarm/compare/v1.2.0...v1.2.1) (2023-11-28)
+
+
+### Documentation
+
+* improve the documentation of CollectiveMovement ([0b0a39e](https://github.com/scafi/macro-swarm/commit/0b0a39eb646cf9d462ad130b154b6fa1782c6138))
+
+
+### General maintenance
+
+* prefer _ instead of outer for the self-dependency ([010317a](https://github.com/scafi/macro-swarm/commit/010317a9436aad87332b5c0122e5232b145b92b9))
+
 ## [1.2.0](https://github.com/scafi/macro-swarm/compare/v1.1.1...v1.2.0) (2023-11-27)
 
 
