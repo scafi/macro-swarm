@@ -1,6 +1,6 @@
 package it.unibo.scafi.macroswarm
 trait FastBlocks[E <: MacroSwarmSupport.Dependency] {
-  outer: MacroSwarmSupport[E] =>
+  _: MacroSwarmSupport[E] =>
 
   import incarnation._
   trait ProcessFix extends CustomSpawn {

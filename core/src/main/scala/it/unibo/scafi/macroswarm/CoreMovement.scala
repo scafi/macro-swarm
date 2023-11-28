@@ -6,7 +6,7 @@ import it.unibo.scafi.space.pimp.PimpPoint3D
 import scala.concurrent.duration.FiniteDuration
 
 trait CoreMovement[E <: MacroSwarmSupport.Dependency] {
-  outer: MacroSwarmSupport[E] =>
+  _: MacroSwarmSupport[E] =>
 
   import incarnation._
 

@@ -2,8 +2,15 @@ package it.unibo.scafi.macroswarm
 
 import it.unibo.scafi.space.Point3D
 
+/** Module that provides a way to plan the movement of a swarm. It is based on the concept of plan, which is a couple of
+  * computation and condition. The computation is a function that returns the velocity of the agent. The condition is a
+  * function that returns a boolean value that indicates if the plan is still valid. The plan is executed until the
+  * condition is false. The plan is selected by the leader of the swarm and broadcasted to the other agents.
+  * @tparam E
+  *   the incarnation of the aggregate program
+  */
 trait CollectivePlanner[E <: MacroSwarmSupport.Dependency] {
-  outer: MacroSwarmSupport[E] =>
+  _: MacroSwarmSupport[E] =>
 
   import incarnation._
 

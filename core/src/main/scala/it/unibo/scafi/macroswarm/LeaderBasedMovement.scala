@@ -4,7 +4,7 @@ import it.unibo.scafi.space.Point3D
 import it.unibo.scafi.space.pimp.PimpPoint3D
 
 trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
-  outer: MacroSwarmSupport[E] =>
+  _: MacroSwarmSupport[E] =>
 
   import incarnation._
 

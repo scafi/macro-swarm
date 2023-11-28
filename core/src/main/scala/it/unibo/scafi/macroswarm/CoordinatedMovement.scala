@@ -3,7 +3,7 @@ package it.unibo.scafi.macroswarm
 import it.unibo.scafi.space.Point3D
 import it.unibo.scafi.space.pimp._
 trait CoordinatedMovement[E <: MacroSwarmSupport.Dependency] {
-  outer: MacroSwarmSupport[E] =>
+  _: MacroSwarmSupport[E] =>
 
   import incarnation._
 
@@ -105,7 +105,8 @@ trait CoordinatedMovement[E <: MacroSwarmSupport.Dependency] {
     trait NeighbouringQuery {
       def queryLocal[L](local: L): Map[ID, L] = query(local, (), (_: Unit) => ()).view.mapValues(_._1).toMap
 
-      def queryNeighborhood[A](center: A, accumulation: A => A): Map[ID, A] = query((), center, accumulation).view.mapValues(_._2).toMap
+      def queryNeighborhood[A](center: A, accumulation: A => A): Map[ID, A] =
+        query((), center, accumulation).view.mapValues(_._2).toMap
 
       def query[L, A](local: L, valueAtCenter: A, accumulation: A => A): Map[ID, (L, A)]
     }
