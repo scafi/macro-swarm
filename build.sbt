@@ -1,5 +1,5 @@
 // Constants
-val defaultScalaVersion = "2.13.6"
+val defaultScalaVersion = "2.13.12"
 
 inThisBuild(
   List(
