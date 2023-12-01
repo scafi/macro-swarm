@@ -1,6 +1,10 @@
 // Constants
 val defaultScalaVersion = "2.13.12"
 
+micrositeName := "MacroSwarm"
+micrositeDescription := "A swarm programming framework based on aggregate computing!"
+micrositeAuthor := "cric96"
+
 inThisBuild(
   List(
     sonatypeProfileName := "it.unibo.scafi", // Your profile name of the sonatype account
@@ -44,6 +48,7 @@ lazy val alchemist = project
 
 lazy val `macro-swarm` = project
   .in(file("."))
+  .enablePlugins(MicrositesPlugin)
   .aggregate(core, alchemist)
   .settings(
     organization := "it.unibo.scafi",
