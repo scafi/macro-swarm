@@ -1,10 +1,6 @@
 // Constants
 val defaultScalaVersion = "2.13.12"
 
-micrositeName := "MacroSwarm"
-micrositeDescription := "A swarm programming framework based on aggregate computing!"
-micrositeAuthor := "cric96"
-
 inThisBuild(
   List(
     sonatypeProfileName := "it.unibo.scafi", // Your profile name of the sonatype account
@@ -26,7 +22,8 @@ inThisBuild(
         url = url("https://cric96.github.io/")
       )
     ),
-    scalaVersion := defaultScalaVersion
+    scalaVersion := defaultScalaVersion,
+
   )
 )
 
@@ -58,5 +55,8 @@ lazy val `macro-swarm` = project
     publishArtifact := false,
     publish := {},
     publishLocal := {},
-    packagedArtifacts := Map.empty
+    packagedArtifacts := Map.empty,
+    micrositeName := "MacroSwarm",
+    micrositeDescription := "A swarm programming framework based on aggregate computing!",
+    micrositeAuthor := "cric96"
   )

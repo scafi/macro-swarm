@@ -2,11 +2,6 @@
 layout: home
 ---
 
-<p align="center">
-  <img src="https://github.com/scafi/macro-swarm/assets/23448811/ee0489cf-52f9-4786-b26d-82b337f31272" width="25%">
-  <h1 align="center"> Swarm programming with ease!</h1>
-</p>
-
   <img width="24%" src="https://user-images.githubusercontent.com/23448811/224010877-6f5c9d36-d348-4343-8b66-19f78778297e.gif">
   <img width="24%" src="https://user-images.githubusercontent.com/23448811/224012332-290c81e1-effa-4cab-ae03-c603c116dd99.gif">
   <img width="24%" src="https://user-images.githubusercontent.com/23448811/224012411-fbef5948-c546-49fa-b411-f5662831ef1b.gif">
