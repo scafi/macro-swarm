@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/scafi/macro-swarm/assets/23448811/ee0489cf-52f9-4786-b26d-82b337f31272" width="25%">
+  <img src="https://github.com/scafi/macro-swarm/assets/23448811/7b1a7e25-73b9-42b7-b9d0-549b1a0289ea" width="25%">
   <h1 align="center"> Swarm programming with ease!</h1>
 </p>
 
