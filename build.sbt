@@ -22,8 +22,7 @@ inThisBuild(
         url = url("https://cric96.github.io/")
       )
     ),
-    scalaVersion := defaultScalaVersion,
-
+    scalaVersion := defaultScalaVersion
   )
 )
 
@@ -58,5 +57,6 @@ lazy val `macro-swarm` = project
     packagedArtifacts := Map.empty,
     micrositeName := "MacroSwarm",
     micrositeDescription := "A swarm programming framework based on aggregate computing!",
-    micrositeAuthor := "cric96"
+    micrositeAuthor := "cric96",
+    micrositeDocumentationUrl := "/guide/quick.html"
   )
