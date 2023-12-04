@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/scafi/macro-swarm/compare/v1.2.4...v1.2.5) (2023-12-04)
+
+
+### Documentation
+
+* install jekyll ([30deb08](https://github.com/scafi/macro-swarm/commit/30deb08ce37e389f4d864641c94db6e72c495069))
+
 ## [1.2.4](https://github.com/scafi/macro-swarm/compare/v1.2.3...v1.2.4) (2023-12-04)
 
 
