@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/scafi/macro-swarm/compare/v1.2.3...v1.2.4) (2023-12-04)
+
+
+### Documentation
+
+* push the site ([8fc9fed](https://github.com/scafi/macro-swarm/commit/8fc9fede95627fee72feb70a236027cf81a11b22))
+
 ## [1.2.3](https://github.com/scafi/macro-swarm/compare/v1.2.2...v1.2.3) (2023-12-04)
 
 
