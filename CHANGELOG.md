@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/scafi/macro-swarm/compare/v1.2.2...v1.2.3) (2023-12-04)
+
+
+### Documentation
+
+* more on the main concept in the site ([deb89d7](https://github.com/scafi/macro-swarm/commit/deb89d70637c64254b28828ebaa8a5ad789c6831))
+
 ## [1.2.2](https://github.com/scafi/macro-swarm/compare/v1.2.1...v1.2.2) (2023-12-04)
 
 
