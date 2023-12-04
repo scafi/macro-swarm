@@ -1,3 +1,25 @@
+## [1.2.2](https://github.com/scafi/macro-swarm/compare/v1.2.1...v1.2.2) (2023-12-04)
+
+
+### Dependency updates
+
+* **deps:** update dependency com.github.sbt:sbt-ci-release to v1.5.12 ([919fabb](https://github.com/scafi/macro-swarm/commit/919fabbed5dd93b2fbd2ee6d1931638de573d934))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v29 ([d15f072](https://github.com/scafi/macro-swarm/commit/d15f0726b1e6e6bdff9c4731ec1ff249a1a8d28f))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v29.0.5 ([7c41bb6](https://github.com/scafi/macro-swarm/commit/7c41bb6ff23caacc3c2f3c0d39352bc4949330e5))
+* **deps:** update dependency scala to v2.13.12 ([92f760b](https://github.com/scafi/macro-swarm/commit/92f760bd720e48a44563ef6731abff6e37567f83))
+
+
+### Documentation
+
+* more on imageQ ([c74f1ca](https://github.com/scafi/macro-swarm/commit/c74f1ca9d1db26b09bd5aa58d9da2baebceebaba))
+
+
+### General maintenance
+
+* prefer a better structure ([fed064d](https://github.com/scafi/macro-swarm/commit/fed064da2be4297947951cea98ce859c93077617))
+* solve conflicts ([283bc5b](https://github.com/scafi/macro-swarm/commit/283bc5bcc270dd8ab8f751a8db68cb15368d23ea))
+* update logo ([f91ebe9](https://github.com/scafi/macro-swarm/commit/f91ebe925085bfea9ac3b3adedb26529385fc455))
+
 ## [1.2.1](https://github.com/scafi/macro-swarm/compare/v1.2.0...v1.2.1) (2023-11-28)
 
 
