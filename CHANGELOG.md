@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/scafi/macro-swarm/compare/v1.2.7...v1.2.8) (2023-12-05)
+
+
+### Documentation
+
+* fix relative url for macro swarm doc ([6a79476](https://github.com/scafi/macro-swarm/commit/6a79476ff922bb762406c7572616ca35afa82acd))
+
 ## [1.2.7](https://github.com/scafi/macro-swarm/compare/v1.2.6...v1.2.7) (2023-12-05)
 
 
