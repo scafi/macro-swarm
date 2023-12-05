@@ -1,0 +1,283 @@
+<!DOCTYPE html><html><head><title>MacroSwarm: Alchemist example</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="cric96" /><meta name="description" content="A swarm programming framework based on aggregate computing!" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="MacroSwarm: Alchemist example" /><meta name="title" property="og:title" content="MacroSwarm: Alchemist example" /><meta name="og:site_name" content="MacroSwarm" /><meta name="og:url" content="https://github.com/scafi/macro-swarm" /><meta name="og:type" content="website" /><meta name="og:description" content="A swarm programming framework based on aggregate computing!" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="MacroSwarm: Alchemist example" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="A swarm programming framework based on aggregate computing!" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/vs.css" /><link rel="stylesheet" href="/css/light-style.css" /><link rel="stylesheet" href="/css/style.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><div id="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"></div><span>MacroSwarm</span></a><button id="main-toggle" class="sidebar-toggle"><span class="close"></span></button></div><div class="sidebar-nav"> <div class="sidebar-nav-item  "><a href="/guide/quick.html" title="Quick Start" class="">Quick Start</a></div> <div class="sidebar-nav-item  "><a href="/guide/concepts.html" title="Main Concepts" class="">Main Concepts</a></div> <div class="sidebar-nav-item active "><a href="/guide/alchemist.html" title="Alchemist walkthrough" class="active">Alchemist walkthrough</a></div></div></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li class="search-nav"><div id="search-dropdown"><label><i class="fa fa-search"></i>Search</label><input id="search-bar" type="text" placeholder="Enter keywords here..." onclick="displayToggleSearch(event)" /><ul id="search-dropdown-content" class="dropdown dropdown-content"></ul></div></li><li id="gh-eyes-item" class="hidden-xs to-uppercase"><a href="https://github.com/cric96/macro-swarm" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye"></i><span>Watchers<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs to-uppercase"><a href="https://github.com/cric96/macro-swarm" target="_blank" rel="noopener noreferrer"><i class="fa fa-star-o"></i><span>Stars<span id="stars" class="label label-default">--</span></span></a></li></ul></div></div></div></div><div id="content" data-github-owner="cric96" data-github-repo="macro-swarm"><div class="content-wrapper"><section><h2 id="requirements">Requirements</h2>
+<p>For running the examples, the simulations and the chart generation, you need to have the following installed:</p>
+
+<ul>
+  <li>A valid JDK installation (&gt;= 11)</li>
+  <li>A python installation (&gt;= 3.8)</li>
+</ul>
+
+<h2 id="running-the-examples">Running the examples</h2>
+<p>The examples are located in the <a href="src/main/scala/examples">src/main/scala/examples</a> folder.
+Each example has an associated yaml file, which contains the configuration for the Alchemist simulation.
+In the following we briefly describe how to run each example and what it is the expected result.</p>
+
+<p>For enabling the trace, follow the following video:</p>
+<p align="center">
+<img width="30%" src="https://user-images.githubusercontent.com/23448811/225930534-7074d1ea-c79d-401b-835c-31d9a0961ddb.gif" />
+</p>
+
+<details>
+  <summary class="summary-title">Constant movement</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+                <td> <a href="src/main/scala/examples/ConstantMovement"> src/main/scala/examples/ConstantMovement </a> </td>
+            <td>A swarm of agents moving in a straight line</td>
+            <td>`./gradlew runConstantMovementGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224010877-6f5c9d36-d348-4343-8b66-19f78778297e.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Explore</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/Explore">src/main/scala/examples/Explore</a></td>
+            <td>A swarm of agents exploring a fixed area</td>
+            <td>`./gradlew runConstantMovementGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224011009-411449cb-2b8e-4ebf-bc00-6fa8ba7a9120.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Obstacle Avoidance</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/ObstacleAvoidance">src/main/scala/examples/ObstacleAvoidance</a></td>
+            <td>A swarm that try to avoid obstacles</td>
+            <td>`./gradlew runObstacleAvoidanceBigGraphic` or `./gradlew runObstacleAvoidanceMiddleGraphic` or `./gradlew runObstacleAvoidanceGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224012332-290c81e1-effa-4cab-ae03-c603c116dd99.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Towards Leader</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/TowardsLeader">src/main/scala/examples/TowardsLeader</a></td>
+            <td>Nodes go towards a sink point (a leader)</td>
+            <td>`./gradlew runTowardsLeaderGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/225931657-d0244288-cb74-491a-b27a-610e9bef70cc.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Spin Around a Leader</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/BranchingExample">src/main/scala/examples/BranchingExample</a></td>
+            <td>Nodes spin aroud a leader</td>
+            <td>`./gradlew runSpinAroundGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224012411-fbef5948-c546-49fa-b411-f5662831ef1b.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Reynolds Flocking</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/ReynoldFlock">src/main/scala/examples/ReynoldFlock</a></td>
+            <td>Swarm moving following reynolds rule</td>
+            <td>`./gradlew runReynoldFlockGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224012578-d375de46-23c3-44e6-99cf-9d937548a1a5.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Team Formation (branching)</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td>[src/main/scala/examples/BranchingExample](src/main/scala/examples/BranchingExample)</td>
+            <td>Example of team formation through branch</td>
+            <td>`./gradlew runBranchingExampleGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/224010942-178aea25-0fde-4bdd-b0e9-59709640cc30.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Team Formation (logical)</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/TeamFormation">src/main/scala/examples/TeamFormation</a></td>
+            <td>A swarm that create several sub-swarm based on spatial constraints</td>
+            <td>`./gradlew runTeamFormationGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/225940078-2b28543c-dd0c-4b0b-9442-0edcfdc13a2f.gif" />
+    </p>
+</details>
+
+<details>
+  <summary class="summary-title">Shape Formation</summary>
+    <table class="center-table">
+        <tr>
+            <td>Example</td>
+            <td>Description</td>
+            <td>Command</td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/examples/AllShape">src/main/scala/examples/AllShape</a></td>
+            <td>A swarm of nodes that form several shapes</td>
+            <td>`./gradlew runAllShapeGraphic`</td>
+        </tr>
+    </table>
+    <p align="center">
+        <img width="30%" src="https://user-images.githubusercontent.com/23448811/225940078-2b28543c-dd0c-4b0b-9442-0edcfdc13a2f.gif" />
+    </p>
+</details>
+
+<p>For other examples, please refer to the <a href="src/main/yaml">examples</a> folder. For each file, you can run the corresponding example with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew run&lt;ExampleName&gt;Graphic
+</code></pre></div></div>
+
+<h3 id="simulation-find-and-rescue">Simulation: Find and Rescue</h3>
+<p>The focus is on a scenario involving a fleet of drones patrolling a 1 km² area, 
+designed to respond to emergency situations such as fires or injuries. 
+In the following, we describe the main characteristics of the scenario, 
+the simulation parameters, and the expected results.</p>
+
+<h4 id="scenario-details">Scenario Details</h4>
+
+<ul>
+  <li><strong>Environment</strong>: A spatial area of 1 km².</li>
+  <li><strong>Emergency Situations</strong>: These include events like fires or injuries, and are randomly generated within the simulation.</li>
+  <li><strong>Drone Fleet Composition</strong>:
+    <ul>
+      <li><strong>Explorers</strong>: 50 drones tasked with identifying emergency situations.</li>
+      <li><strong>Healers</strong>: 5 drones designated to respond to and resolve emergencies.</li>
+    </ul>
+  </li>
+  <li><strong>Operation</strong>: Exploration is conducted in groups, each consisting of at least one healer and multiple explorers.</li>
+  <li><strong>Drone Specifications</strong>:
+    <ul>
+      <li><strong>Speed</strong>: Maximum of 20 km/h.</li>
+      <li><strong>Communication Range</strong>: 100 meters.</li>
+    </ul>
+  </li>
+  <li><strong>Simulation Parameters</strong>:
+    <ul>
+      <li><strong>Duration</strong>: Each run lasts 90 minutes.</li>
+      <li><strong>Emergency Generation</strong>: Emergencies occur randomly in a [0, 50] minutes timeframe.</li>
+      <li><strong>Objective</strong>: Minimize the number of unresolved emergency situations.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="running-the-simulation">Running the Simulation</h4>
+
+<p>To observe the dynamics of the simulation, execute the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew runRescueGraphic
+</code></pre></div></div>
+
+<p>In the following there is a sequence of screenshots of the simulation:</p>
+
+<div class="centering">
+  <img class="bordered-image" width="20%" src="../img/scenario/scenario-1.png" />
+  <img class="bordered-image" width="20%" src="../img/scenario/scenario-2.png" />
+  <img class="bordered-image" width="20.25%" src="../img/scenario/scenario-3.png" />
+</div>
+
+<h4 id="further-information">Further Information</h4>
+
+<p>For a comprehensive understanding and additional details, please refer to the <a href="https://link.springer.com/chapter/10.1007/978-3-031-35361-1_2">accompanying academic paper</a>.</p>
+
+<h4 id="reproduce-the-results">Reproduce the results</h4>
+<p>To reproduce the results of the paper, you can run the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew runRescueBatch
+</code></pre></div></div>
+<p>This will launch 64 simulations with different seeds. Each of them, will produce a csv file in the <code class="language-plaintext highlighter-rouge">data</code> folder.
+In this repository, the data is already loaded,
+so you can directly run the following command to generate the plots:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+python process.py
+</code></pre></div></div>
+<p>This will produce the following charts stored in charts/:</p>
+
+<div class="centering">
+  <img width="25%" src="https://user-images.githubusercontent.com/23448811/232056242-7152346b-e6e7-4eb6-b8a9-c72c3cd6ada1.png" />
+  <img width="25%" src="https://user-images.githubusercontent.com/23448811/232056530-c6b14064-b1d5-4a38-8642-dc6d2be063ec.png" />
+  <img width="25%" src="https://user-images.githubusercontent.com/23448811/232056744-8b04d3d7-2430-454e-bdce-498ddb347069.png" />
+</div>
+</section></div></div></div></div><script src="/highlight/highlight.pack.js"></script><script src="/lunr/lunr.js"></script><script>
+// For all code blocks, copy the language from the containing div
+// to the inner code tag (where hljs expects it to be)
+const langPrefix = 'language-';
+document.querySelectorAll(`div[class^='${langPrefix}']`).forEach(function(div) {
+  div.classList.forEach(function(cssClass) {
+    if (cssClass.startsWith(langPrefix)) {
+      const lang = cssClass.substring(langPrefix.length);
+      div.querySelectorAll('pre code').forEach(function(code) {
+        code.classList.add(lang);
+      });
+    }
+  });
+});
+
+hljs.configure({languages:['scala','java','bash']});
+hljs.initHighlightingOnLoad();
+      </script><script>console.info('\x57\x65\x62\x73\x69\x74\x65\x20\x62\x75\x69\x6c\x74\x20\x77\x69\x74\x68\x3a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x5f\x5f\x0a\x20\x20\x20\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x5f\x20\x20\x2f\x20\x2f\x5f\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x5f\x5f\x5f\x20\x20\x28\x5f\x29\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x28\x5f\x29\x20\x2f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x0a\x20\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x60\x5f\x5f\x20\x5c\x2f\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x20\x2f\x20\x5f\x5f\x2f\x20\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x0a\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x5f\x2f\x20\x2f\x20\x2f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x5f\x5f\x2f\x20\x2f\x20\x20\x2f\x20\x2f\x5f\x2f\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x20\x2f\x5f\x2f\x20\x20\x5f\x5f\x28\x5f\x5f\x20\x20\x29\x0a\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2e\x5f\x5f\x5f\x2f\x5c\x5f\x5f\x2f\x20\x20\x20\x20\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x2f\x20\x20\x20\x5c\x5f\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x0a\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f\x34\x37\x64\x65\x67\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f\x73\x62\x74\x2d\x6d\x69\x63\x72\x6f\x73\x69\x74\x65\x73')</script><script>((window.gitter = {}).chat = {}).options = {
+room: 'cric96/macro-swarm'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/search.js"></script><script src="/js/docs.js"></script></body></html>
