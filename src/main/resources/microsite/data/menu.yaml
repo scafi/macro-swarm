@@ -1,10 +1,10 @@
 options:
 
   - title: Quick Start
-    url: guide/quick.html
+    url: macro-swarm/guide/quick.html
 
   - title: Main Concepts
-    url: guide/concepts.html
+    url: macro-swarm/guide/concepts.html
 
   - title: Alchemist walkthrough
-    url: guide/alchemist.html
+    url: macro-swarm/guide/alchemist.html
