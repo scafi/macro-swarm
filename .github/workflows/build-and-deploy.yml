@@ -102,11 +102,13 @@ jobs:
       - if: steps.release.outputs.has-released
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.0
+          ruby-version: 3.0.6
       - if: steps.release.outputs.has-released
         run: gem install jekyll bundler
       - if: steps.release.outputs.has-released
-        run: sbt makeMicrosite; ls
+        run: jekyll --version
+      - if: steps.release.outputs.has-released
+        run: sbt makeMicrosite; ls target
       - if: steps.release.outputs.has-released
         name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
