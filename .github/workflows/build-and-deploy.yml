@@ -13,6 +13,8 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: write
 jobs:
   Build-and-Test:
     strategy:
@@ -104,6 +106,8 @@ jobs:
       - if: steps.release.outputs.has-released
         run: gem install jekyll bundler
       - if: steps.release.outputs.has-released
-        run: sbt publishMicrosite
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sbt makeMicrosite
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: /target/site
