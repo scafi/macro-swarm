@@ -4,12 +4,13 @@ title:  "Main concepts"
 
 ---
 
-MacroSwarm is a field-based libraries for expressing swarm behaviors in a declarative way.
-It is based on [ScaFi](), a scala library for programming aggregate computing systems.
-It supports a large variety of swarm behaviors, including collective movement, shape formation, team formation, and collective planning.
+MacroSwarm is based on the notion of computational fields,
+which are functions that map a position in space to a value.
+In particular, In this case each collective movement is expressed as a computational field,
+which is a function that maps a position in space to a velocity vector.
+These fields can be composed to create more complex behaviors.
+Thus, in this library, we collect several main basic behaviors that can be composed to create more complex behaviors.
 
-More details about the library can be found in the [API documentation](https://scafi.github.io/macro-swarm/api/) 
-and in the main concepts section of the [guide](/guide/concepts.html).
+This structure is exemplified in the following figure:
 
-This library does not provide any simulation environment, but it is possible to use it with [Alchemist](https://alchemistsimulator.github.io/).
-
+In the following, we describe the main function exposed by the library.
