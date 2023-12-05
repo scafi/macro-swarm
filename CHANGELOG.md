@@ -1,3 +1,11 @@
+## [1.2.11](https://github.com/scafi/macro-swarm/compare/v1.2.10...v1.2.11) (2023-12-05)
+
+
+### Documentation
+
+* try to change the URL again ([b531e80](https://github.com/scafi/macro-swarm/commit/b531e803f1ea4d9a5dbb215de1d140cbe87cc608))
+* try to use the right url for the documentationg ([e53526a](https://github.com/scafi/macro-swarm/commit/e53526a769f767111ec941a007cdc1d54421843b))
+
 ## [1.2.10](https://github.com/scafi/macro-swarm/compare/v1.2.9...v1.2.10) (2023-12-05)
 
 
