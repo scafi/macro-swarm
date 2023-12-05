@@ -104,7 +104,7 @@ jobs:
         with:
           ruby-version: 3.0.6
       - if: steps.release.outputs.has-released
-        run: gem install jekyll bundler
+        run: gem install 'jekyll:4.2.1' bundler
       - if: steps.release.outputs.has-released
         run: jekyll --version
       - if: steps.release.outputs.has-released
