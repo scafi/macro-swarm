@@ -56,6 +56,7 @@ lazy val `macro-swarm` = project
     publishLocal := {},
     packagedArtifacts := Map.empty,
     micrositeName := "MacroSwarm",
+    micrositeBaseUrl := "macro-swarm",
     micrositeDescription := "A swarm programming framework based on aggregate computing!",
     micrositeAuthor := "cric96",
     micrositeDocumentationUrl := "/guide/quick.html",
