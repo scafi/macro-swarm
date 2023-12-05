@@ -13,3 +13,5 @@ Thus, in this library, we collect several main basic behaviors that can be compo
 This structure is exemplified in the following figure:
 
 In the following, we describe the main function exposed by the library.
+
+For more details, please refer to the [API documentation](https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html).
