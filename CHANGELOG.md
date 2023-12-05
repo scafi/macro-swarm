@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/scafi/macro-swarm/compare/v1.2.8...v1.2.9) (2023-12-05)
+
+
+### Documentation
+
+* add link to scala doc api ([456779d](https://github.com/scafi/macro-swarm/commit/456779dcfac940de790e99ba436eb522d5e0003b))
+
 ## [1.2.8](https://github.com/scafi/macro-swarm/compare/v1.2.7...v1.2.8) (2023-12-05)
 
 
