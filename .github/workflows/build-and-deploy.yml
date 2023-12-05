@@ -106,8 +106,9 @@ jobs:
       - if: steps.release.outputs.has-released
         run: gem install jekyll bundler
       - if: steps.release.outputs.has-released
-        run: sbt makeMicrosite
-      - name: Deploy 🚀
+        run: sbt makeMicrosite; ls
+      - if: steps.release.outputs.has-released
+        name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: /target/site
