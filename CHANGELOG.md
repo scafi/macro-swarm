@@ -1,3 +1,23 @@
+## [1.2.6](https://github.com/scafi/macro-swarm/compare/v1.2.5...v1.2.6) (2023-12-05)
+
+
+### Documentation
+
+* fix the path of the guides ([2f202e8](https://github.com/scafi/macro-swarm/commit/2f202e85c94d5e03f5d426bd0a5bc0f1438490f8))
+
+
+### Build and continuous integration
+
+* fix the base url ([5298365](https://github.com/scafi/macro-swarm/commit/5298365b367d0dad1dc38212fec6d75809aebdcc))
+* fix the ruby installation ([7fae2af](https://github.com/scafi/macro-swarm/commit/7fae2afd0465742f76e579c5d175b6120717d1aa))
+* fix the ruby installation with the right version ([f3fa798](https://github.com/scafi/macro-swarm/commit/f3fa79868b201549d3f652d97dea6f96961ee981))
+* fix the site folder ([b0b4978](https://github.com/scafi/macro-swarm/commit/b0b49782cb3c185758fbd70e3f57b50532f0d843))
+* force documentation push ([272f5b1](https://github.com/scafi/macro-swarm/commit/272f5b1213f87113803f4831e4cabfcc3f99c316))
+* force the right jekyll version ([944dd2a](https://github.com/scafi/macro-swarm/commit/944dd2ad7c270a895fd7e54db83485954bc8baec))
+* publish the scala doc ([b805a42](https://github.com/scafi/macro-swarm/commit/b805a426d73c360ed116c41b86acfa14d9c0dc93))
+* show all the elements ([92078f1](https://github.com/scafi/macro-swarm/commit/92078f175e1c5bb2076be970f6c252245bd50236))
+* show the jekyll version ([2a3fe8c](https://github.com/scafi/macro-swarm/commit/2a3fe8ccb36a2785762656e112bded2f8f255471))
+
 ## [1.2.5](https://github.com/scafi/macro-swarm/compare/v1.2.4...v1.2.5) (2023-12-04)
 
 
