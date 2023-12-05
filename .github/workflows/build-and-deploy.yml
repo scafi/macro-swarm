@@ -108,7 +108,11 @@ jobs:
       - if: steps.release.outputs.has-released
         run: jekyll --version
       - if: steps.release.outputs.has-released
-        run: sbt makeMicrosite; ls target
+        run: sbt makeMicrosite; sbt doc
+      - if: steps.release.outputs.has-released
+        run: sbt makeMicrosite; sbt doc
+      - if: steps.release.outputs.has-released
+        run: cp -r core/target/scala-2.13/api target/site/api
       - if: steps.release.outputs.has-released
         name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
