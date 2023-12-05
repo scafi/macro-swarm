@@ -60,7 +60,5 @@ lazy val `macro-swarm` = project
     micrositeDescription := "A swarm programming framework based on aggregate computing!",
     micrositeAuthor := "cric96",
     micrositeDocumentationUrl := "guide/quick.html",
-    micrositeGithubOwner := "cric96",
-    micrositePushSiteWith := GitHub4s,
-    micrositeGithubToken := Option(System.getenv("GITHUB_TOKEN"))
+    micrositeGithubOwner := "cric96"
   )
