@@ -3,12 +3,27 @@ package it.unibo.scafi.macroswarm
 import it.unibo.scafi.space.Point3D
 import it.unibo.scafi.space.pimp.PimpPoint3D
 
+/** This trait provides the libraries for LeaderBasedMovement.
+  * @tparam E
+  *   the incarnation of the aggregate system
+  */
 trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
   _: MacroSwarmSupport[E] =>
 
   import incarnation._
 
+  /** It is needed for ordering the IDs of the nodes. Indeed, the ID might be of any type, so we need to provide an
+    * ordering for it.
+    * @return
+    *   the Ordering type class for the IDs
+    */
   implicit def ordering: Ordering[ID]
+
+  /** This library provides the basic movement primitives for the leader-based movement. It mainly consist in function
+    * for aligning, sinking, and spinning around a leader, i.e., a node that is responsible for the movement of a subset
+    * of the nodes. Indeed, the leader-based movements are based of G, therefore they create areas of influence around
+    * the leader.
+    */
   trait LeaderBasedLib {
     self: AggregateProgram
       with StandardSensors
@@ -19,18 +34,43 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       with BlocksWithGC
       with BlocksWithShare =>
 
-    def alignWithLeader(source: Boolean, point: Point3D): Point3D =
-      GWithShare(source, point, identity[Point3D], nbrRange)
+    /** Aligns the node with the leader, i.e., it returns the vector from the node to the leader.
+      * @param source
+      *   whether the node is the leader or not
+      * @param point
+      *   the velocity to align with the leader
+      * @return
+      *   the velocity aligned with the leader
+      */
+    def alignWithLeader(source: Boolean, velocity: Point3D): Point3D =
+      GWithShare(source, velocity, identity[Point3D], nbrRange)
 
+    /** Sink the node towards the leader, i.e., it returns the vector from the node to the leader.
+      * @param source
+      *   whether the node is the leader or not
+      * @return
+      *   the vector from the node to the leader
+      */
     def sinkAt(source: Boolean): Point3D =
       GWithShare[Point3D](source, Point3D.Zero, vector => vector + nbrVector(), nbrRange).normalize
 
-    def spinAround(center: Boolean): Point3D = {
-      val toCenter = sinkAt(center)
-      toCenter.crossProduct(Point3D(0, 0, 1))
-    }
+    /** Spins around the leader, i.e., it returns the vector orthogonal to the vector from the node to the leader.
+      *
+      * @param center
+      *   whether the node is the leader or not
+      * @return
+      *   the vector orthogonal to the vector from the node to the leader
+      */
+    def spinAround(center: Boolean): Point3D =
+      sinkAt(center).crossProduct(Point3D(0, 0, 1))
   }
 
+  /** This library provides the basic blocks to create logical teams, i.e., a subset of node that have a persistent
+    * common goal. One a team is formed, the nodes cannot leave it. Inside a team, there will be a logic influenced by
+    * the leader-based movement, i.e., the leader will be responsible for the movement of the team. This library
+    * provides a way to create this teams based on intra-distance and extra-distance. The foster is the distance between
+    * nodes that are in the same team. The latter is influence of the leader during the formation of the team.
+    */
   trait TeamFormationLib {
     self: AggregateProgram
       with StandardSensors
@@ -43,6 +83,40 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       with FlockLib
       with LeaderBasedLib =>
 
+    /** A team is a set of nodes that have a common goal. The team is formed when the leader is able to influence the
+      * nodes to move towards the goal. The team is persistent, i.e., the nodes cannot leave the team.
+      * @param leader
+      *   the leader of the team
+      * @param isFormed
+      *   whether the team is formed or not
+      * @param velocity
+      *   the velocity of local movement of the team
+      */
+    case class Team(leader: ID, isFormed: Boolean, velocity: Point3D) {
+
+      /** Returns the velocity of the node inside the team.
+        * @param velocityGenerator
+        *   the logic applied inside the team, it is a function from the leader ID of the node to the velocity of the
+        *   node
+        * @return
+        *   the velocity of the node inside the team
+        */
+      def insideTeam(velocityGenerator: ID => Point3D): Point3D = rep((isFormed, velocity)) { case (formed, _) =>
+        branch(!formed)((isFormed, velocity))(align(leader)(k => (true, velocityGenerator(k))))
+      }._2
+    }
+
+    /** The logic of creating a team based on the distance between the nodes. A team is consider formed when all the
+      * nodes have the same average distances from their neighbours.
+      * @param source
+      *   whether the node is the leader or not
+      * @param targetDistance
+      *   the distance between the nodes in the team
+      * @param necessary
+      *   the number of nodes to be considered when computing the average distance
+      * @return
+      *   whether the team is formed or not
+      */
     def isTeamFormed(source: Boolean, targetDistance: Double, necessary: Int = 1): Boolean = {
       val potential = fastGradient(source, nbrRange)
       val totalDistance = excludingSelf.reifyField(nbrRange())
@@ -55,39 +129,28 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       broadcastAlongWithShare(potential, isFormed, nbrRange)
     }
 
-    def countIn(source: Boolean): Int = {
-      val potential = fastGradient(source, nbrRange)
-      val count = CWithShare[Double, Int](potential, _ + _, 1, 0)
-      broadcastAlongWithShare(potential, count, nbrRange)
-    }
-
-    case class Team(leader: ID, isFormed: Boolean, velocity: Point3D) {
-      def insideTeam(velocityGenerator: ID => Point3D): Point3D = rep((isFormed, velocity)) { case (formed, _) =>
-        branch(!formed)((isFormed, velocity))(align(leader)(k => (true, velocityGenerator(k))))
-      }._2
-    }
-    /*
-    def teamFormation(
-        targetIntraDistance: Double,
-        targetExtraDistance: Double,
-        confidence: Double,
-        separationWeight: Double,
-        necessary: Int = 1
-    ): Team = {
-      val leader = SWithShare(targetExtraDistance, nbrRange)
-      val localLeader = broadcastAlongWithShare(fastGradient(leader, nbrRange), mid(), nbrRange)
-      val isFormed = teamFormed(leader, targetIntraDistance + confidence, necessary)
-      val velocity = rep(Point3D.Zero)(velocity =>
-        branch(!isFormed) {
-          (sinkAt(leader) + separation(
-            velocity,
-            OneHopNeighbourhoodWithinRange(targetIntraDistance)
-          ) * separationWeight).normalize
-        }(Point3D.Zero)
-      )
-      Team(localLeader, isFormed, velocity)
-    }*/
-
+    /** The logic of creating a team based on the distance between the nodes.
+      *
+      * In this case, it use internally S to compute leaders based on the extra distance.
+      *
+      * The condition is a function that takes as input the leader and returns whether the team is formed or not.
+      *
+      * An example of usage is the following:
+      * ```scala
+      * teamFormation(80, 300, 0.1, leader => isTeamFormed(leader, 100, 2))
+      * ```
+      *
+      * @param targetIntraDistance
+      *   the distance between the nodes in the team
+      * @param targetExtraDistance
+      *   the area of influence of the leader
+      * @param separationWeight
+      *   the weight of the separation force
+      * @param condition
+      *   the condition to be satisfied to consider the team formed
+      * @return
+      *   whether the team is formed or not
+      */
     def teamFormation(
         targetIntraDistance: Double,
         targetExtraDistance: Double,
@@ -100,10 +163,10 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
           val leader = SWithShare(targetExtraDistance, nbrRange)
           val localLeader = broadcastAlongWithShare(fastGradient(leader, nbrRange), mid(), nbrRange)
           val isFormed = condition(leader)
-          val updateVelocity = (sinkAt(leader) + separation(
-            velocity,
-            OneHopNeighbourhoodWithinRange(targetIntraDistance)
-          ) * separationWeight).normalize
+          val updateVelocity =
+            (sinkAt(leader)
+              + separation(velocity, OneHopNeighbourhoodWithinRange(targetIntraDistance))
+              * separationWeight).normalize
           (localLeader, isFormed, updateVelocity)
         } {
           (leaderId, true, Point3D.Zero)
@@ -112,6 +175,24 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       Team(leaderId.asInstanceOf[ID], formed, velocity)
     }
 
+    /** The actual team formation logic. In this case, a leader already exists and it is provided as input. This block
+      * is responsible of maintaining the right intra distance between the nodes. The condition is a function that takes
+      * as input the leader and returns whether the team is formed or not.
+      *
+      * An example of usage is the following:
+      * ```scala
+      * teamFormation(leader, 80, 0.1, leader => isTeamFormed(leader, 100, 2))
+      * ```
+      * @param center
+      *   the leader of the team
+      * @param targetIntraDistance
+      *   the distance between the nodes in the team
+      * @param separationWeight
+      *   the weight of the separation force
+      * @param condition
+      *   the condition to be satisfied to consider the team formed
+      * @return
+      */
     def teamFormation(
         center: Boolean,
         targetIntraDistance: Double,
