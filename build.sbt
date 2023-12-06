@@ -30,7 +30,7 @@ lazy val core = project.settings(
   organization := "it.unibo.scafi",
   name := "macro-swarm-core",
   scalaVersion := defaultScalaVersion,
-  libraryDependencies += "it.unibo.scafi" %% "scafi-core" % "1.1.7"
+  libraryDependencies += "it.unibo.scafi" %% "scafi-core" % "1.2.0"
 )
 
 lazy val alchemist = project
