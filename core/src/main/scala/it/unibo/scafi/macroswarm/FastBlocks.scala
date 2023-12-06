@@ -1,8 +1,15 @@
 package it.unibo.scafi.macroswarm
+
+/** This trait provides a set of blocks that can be used to implement the fast gradient algorithm and share operator. In
+  * the future, these blocks will be integrated into the standard library.
+  * @tparam E
+  *   the incarnation of the aggregate system
+  */
 trait FastBlocks[E <: MacroSwarmSupport.Dependency] {
   _: MacroSwarmSupport[E] =>
 
   import incarnation._
+
   trait ProcessFix extends CustomSpawn {
     self: AggregateProgram =>
     override def runOnSharedKeysWithShare[K, A, R](process: K => (R, Boolean), params: Set[K]): Map[K, R] = {
