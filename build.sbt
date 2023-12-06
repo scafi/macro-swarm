@@ -39,7 +39,7 @@ lazy val alchemist = project
     scalaVersion := defaultScalaVersion,
     organization := "it.unibo.scafi",
     name := "macro-swarm-alchemist",
-    libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "29.0.5"
+    libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "29.0.6"
   )
 
 lazy val `macro-swarm` = project
