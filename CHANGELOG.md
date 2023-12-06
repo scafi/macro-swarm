@@ -1,3 +1,11 @@
+## [1.2.13](https://github.com/scafi/macro-swarm/compare/v1.2.12...v1.2.13) (2023-12-06)
+
+
+### Documentation
+
+* improve the scala doc for leader based movemetn ([584877d](https://github.com/scafi/macro-swarm/commit/584877d384c7fd025eee1ac51be32a97972590e4))
+* more on core movement ([beb6c5f](https://github.com/scafi/macro-swarm/commit/beb6c5f9851a0b8fef13d96a5437a7d8ce42e506))
+
 ## [1.2.12](https://github.com/scafi/macro-swarm/compare/v1.2.11...v1.2.12) (2023-12-06)
 
 
