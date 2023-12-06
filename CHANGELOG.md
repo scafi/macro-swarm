@@ -1,3 +1,10 @@
+## [1.2.14](https://github.com/scafi/macro-swarm/compare/v1.2.13...v1.2.14) (2023-12-06)
+
+
+### Documentation
+
+* coordinated movement lib ([5c2ab63](https://github.com/scafi/macro-swarm/commit/5c2ab6365632528171c7e2e5b0eab56a9fc217fc))
+
 ## [1.2.13](https://github.com/scafi/macro-swarm/compare/v1.2.12...v1.2.13) (2023-12-06)
 
 
