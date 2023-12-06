@@ -1,3 +1,15 @@
+## [1.2.12](https://github.com/scafi/macro-swarm/compare/v1.2.11...v1.2.12) (2023-12-06)
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.79 ([5cc8411](https://github.com/scafi/macro-swarm/commit/5cc8411108e85832a1151dcbee60b994285c43c4))
+
+
+### Documentation
+
+* add scala doc for leader based blocks ([4635fc3](https://github.com/scafi/macro-swarm/commit/4635fc3e3c1f0803fe1e40aa257fa59277e4340c))
+
 ## [1.2.11](https://github.com/scafi/macro-swarm/compare/v1.2.10...v1.2.11) (2023-12-05)
 
 
