@@ -217,6 +217,14 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
     }
   }
 
+  /** a library for creating spatial patterns in the swarm. The behaviour is based on the gradient of a potential field.
+    *
+    * Therefore, for creating a shape, it should exist a leader responsible for that shape.
+    *
+    * Team formation and pattern formation can be used together to create a shape with a team of nodes.
+    *
+    * Currently, the shapes supported are: line, circle, and v-shape.
+    */
   trait PatternFormationLib extends {
     self: AggregateProgram
       with StandardSensors
@@ -227,6 +235,20 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       with BlocksWithGC
       with BlocksWithShare =>
 
+    /** Creates a line shape. The leader is responsible for the shape. The nodes are placed in a line with a distance
+      * Example: o -- o -- x -- o -- o
+      *
+      * @param leader
+      *   the leader of the shape
+      * @param distance
+      *   between the node of the shape
+      * @param confidence
+      *   the confidence of the shape, i.e., how much error is allowed for the given distance
+      * @param leaderVelocity
+      *   the velocity of the leader
+      * @return
+      *   the velocity of the node in order to form the shape
+      */
     def line(
         leader: Boolean,
         distance: Double,
@@ -250,6 +272,32 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       }
     }
 
+    /** Creates a circle shape. The leader is responsible for the shape. The nodes are placed in a circle with a
+      * distance.
+      *
+      * Example:
+      * ```
+      *    ooo
+      *  o     o
+      * o   x   o
+      *  o     o
+      *    ooo
+      * ```
+      * Example of usage (leader id = 1):
+      * ```scala
+      * centeredCircle(leader = mid() == 1, radius = 100, confidence = 0.1)
+      * ```
+      * @param leader
+      *   whether the node is the leader or not
+      * @param radius
+      *   the radius of the circle
+      * @param confidence
+      *   the confidence of the shape, i.e., how much error is allowed for the given distance
+      * @param leaderVelocity
+      *   the velocity of the leader
+      * @return
+      *   the velocity of the node in order to form the shape
+      */
     def centeredCircle(
         leader: Boolean,
         radius: Double,
@@ -270,6 +318,34 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
       }
     }
 
+    /** Creates a v-shape. The leader is responsible for the shape. The nodes are placed in a v-shape with a distance
+      * example:
+      * ```
+      *        x
+      *     o     o
+      *  o          o
+      * ```
+      * example of usage (leader id = 1):
+      * ```scala
+      * rep(Point3D.Zero) { oldVelocity =>
+      *   vShape(leader = mid() == 1, oldVelocity = velocity, distance = 100, radius = Math.PI / 2, confidence = 0.1)
+      * }
+      * ```
+      * @param leader
+      *   the leader of the shape
+      * @param oldVelocity
+      *   the old velocity of the node (that means it should be used inside a rep)
+      * @param distance
+      *   the target distance between the node of the shape
+      * @param radius
+      *   the angle of the v-shape
+      * @param confidence
+      *   the confidence of the shape, i.e., how much error is allowed for the given distance
+      * @param leaderVelocity
+      *   the velocity of the leader
+      * @return
+      *   the velocity of the node in order to form the shape
+      */
     def vShape(
         leader: Boolean,
         oldVelocity: Point3D,
@@ -299,6 +375,16 @@ trait LeaderBasedMovement[E <: MacroSwarmSupport.Dependency] {
 
     }
 
+    /** A utility function for verifying whether a circle is formed or not.
+      * @param source
+      *   whether the node is the leader or not
+      * @param targetDistance
+      *   the target distance between the nodes in the circle
+      * @param confidence
+      *   the confidence of the shape, i.e., how much error is allowed for the given distance
+      * @return
+      *   whether the circle is formed or not
+      */
     def isCircleFormed(source: Boolean, targetDistance: Double, confidence: Double): Boolean = {
       val potential = fastGradient(source, nbrRange)
       val distances = CWithShare[Double, List[Double]](potential, _ ::: _, List(potential), List.empty).filter(_ != 0.0)
