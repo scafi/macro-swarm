@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/scafi/macro-swarm/compare/v1.4.1...v1.4.2) (2023-12-12)
+
+
+### Documentation
+
+* remove concepts and improve quick start ([c2b70b9](https://github.com/scafi/macro-swarm/commit/c2b70b985038d4bd5e3709f03969225408fd3234))
+
 ## [1.4.1](https://github.com/scafi/macro-swarm/compare/v1.4.0...v1.4.1) (2023-12-12)
 
 
