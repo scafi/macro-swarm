@@ -16,7 +16,52 @@ More details about the library can be found in the <a href="https://scafi.github
 and in the main concepts section of the <a href="/guide/concepts.html">guide</a>.</li>
 </ul>
 
-<p>##</p>
+<h2 id="example">Example</h2>
+
+<h3 id="requirements">Requirements</h3>
+<ul>
+  <li>Java 11</li>
+  <li>SBT</li>
+</ul>
+
+<h3 id="steps">Steps</h3>
+<ol>
+  <li>Create a new SBT project with the following <code class="language-plaintext highlighter-rouge">build.sbt</code> file:
+```scala
+ThisBuild / scalaVersion := “2.13.12”
+val alchemistClass = “it.unibo.alchemist.Alchemist”
+lazy val root = (project in file(“.”))
+  .settings(
+ name := “macro-swarm-demo”,
+ libraryDependencies += “it.unibo.scafi” %% “macro-swarm-alchemist” % “1.4.0”,
+ Compile / mainClass := Some(alchemistClass),
+ run / mainClass := Some(alchemistClass)
+  )</li>
+</ol>
+
+<p>addCommandAlias(“runAlchemist”, “run src/main/yaml/main.yaml”)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. Create a main app like the following:
+```scala
+package example
+
+import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport._ // import all the MacroSwarm API
+import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._ // import the standard AC API
+
+class SimpleMovement extends MacroSwarmProgram // define a program that supports the movement in alchemist env
+  with StandardSensors with TimeUtils // standard AC API (sensing and time)
+  // library for basic movement
+  with BaseMovementLib {
+
+  override def main(): Any =
+    brownian(1) // random movement
+}
+</code></pre></div></div>
+<ol>
+  <li>Create a new file <code class="language-plaintext highlighter-rouge">src/main/yaml/main.yaml</code> with the following content:
+```yaml</li>
+</ol>
+
+<p>```</p>
 
 <h2 id="related-tools">Related Tools</h2>
 <ul>
