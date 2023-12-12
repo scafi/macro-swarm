@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/scafi/macro-swarm/compare/v1.3.0...v1.4.0) (2023-12-12)
+
+
+### Features
+
+* **macro-swarm-alchemist:** pack with GUI ([29c4d41](https://github.com/scafi/macro-swarm/commit/29c4d414498df4ed9463e708744ed57c7132cd80))
+
 ## [1.3.0](https://github.com/scafi/macro-swarm/compare/v1.2.14...v1.3.0) (2023-12-12)
 
 
