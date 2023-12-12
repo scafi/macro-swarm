@@ -52,6 +52,7 @@ import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._ // imp
 
 class SimpleMovement extends MacroSwarmProgram // define a program that supports the movement in alchemist env
   with StandardSensors with TimeUtils // standard AC API (sensing and time)
+  with ScafiAlchemistSupport // help for alchemist
   // library for basic movement
   with BaseMovementLib {
 
