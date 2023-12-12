@@ -1,3 +1,24 @@
+## [1.3.0](https://github.com/scafi/macro-swarm/compare/v1.2.14...v1.3.0) (2023-12-12)
+
+
+### Features
+
+* add MacroSwarmProgram as alchemist entry point ([c7c65e3](https://github.com/scafi/macro-swarm/commit/c7c65e3d9cb590a68cc4a03ffbd160e5bc62784d))
+
+
+### Dependency updates
+
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v29.0.6 ([a5ed0ba](https://github.com/scafi/macro-swarm/commit/a5ed0ba87b3f3f69991600b82b43a0abec6e1915))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v29.0.7 ([c3a705e](https://github.com/scafi/macro-swarm/commit/c3a705e19c6f96f7f2aa9c0e20f5f911503952ca))
+* **deps:** update dependency it.unibo.scafi:scafi-core to v1.2.0 ([d4e84e4](https://github.com/scafi/macro-swarm/commit/d4e84e456440f6cd393d2cdbd14659dd18fd978d))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.80 ([8f110be](https://github.com/scafi/macro-swarm/commit/8f110be9662308674c620d40198d465dae19c2e8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.81 ([77b941c](https://github.com/scafi/macro-swarm/commit/77b941c45aef3d4ba1da38daee70fb52543d85b2))
+
+
+### Documentation
+
+* more quick start guide ([b774693](https://github.com/scafi/macro-swarm/commit/b774693726a53080f1dc673a28e894fc89eb8357))
+
 ## [1.2.14](https://github.com/scafi/macro-swarm/compare/v1.2.13...v1.2.14) (2023-12-06)
 
 
