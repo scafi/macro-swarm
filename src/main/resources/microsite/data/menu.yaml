@@ -3,8 +3,5 @@ options:
   - title: Quick Start
     url: guide/quick.html
 
-  - title: Main Concepts
-    url: guide/concepts.html
-
   - title: Alchemist walkthrough
     url: guide/alchemist.html
