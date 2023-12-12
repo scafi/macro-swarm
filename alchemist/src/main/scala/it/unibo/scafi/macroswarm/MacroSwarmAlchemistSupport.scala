@@ -5,8 +5,8 @@ import it.unibo.scafi.space.Point3D
 object MacroSwarmAlchemistSupport extends MacroSwarmSupport(ScafiIncarnationForAlchemist) {
   implicit override def ordering: Ordering[Int] = Ordering.Int
 
-  trait MacroSwarmProgram extends incarnation.AggregateProgram with incarnation.ScafiAlchemistSupport {
-    self: incarnation.StandardSensors =>
+  trait MacroSwarmProgram extends incarnation.AggregateProgram {
+    self: incarnation.StandardSensors with incarnation.ScafiAlchemistSupport =>
     override def main(): Any = actuate(movementLogic())
 
     protected def movementLogic(): Point3D
