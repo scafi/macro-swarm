@@ -1,3 +1,5 @@
+import sbt.Keys.libraryDependencies
+
 // Constants
 val defaultScalaVersion = "2.13.12"
 
@@ -39,7 +41,8 @@ lazy val alchemist = project
     scalaVersion := defaultScalaVersion,
     organization := "it.unibo.scafi",
     name := "macro-swarm-alchemist",
-    libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "29.0.7"
+    libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "29.0.7",
+    libraryDependencies += "it.unibo.alchemist" % "alchemist-swingui" % "29.0.7"
   )
 
 lazy val `macro-swarm` = project
