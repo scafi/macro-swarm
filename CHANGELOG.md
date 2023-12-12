@@ -1,3 +1,15 @@
+## [1.4.1](https://github.com/scafi/macro-swarm/compare/v1.4.0...v1.4.1) (2023-12-12)
+
+
+### Bug Fixes
+
+* **macro-swarm-incarnation:** use the right self type ([c53fbf0](https://github.com/scafi/macro-swarm/commit/c53fbf0c3526e1df789d2536f9dc301124f148bc))
+
+
+### Documentation
+
+* more on quick start ([0660f77](https://github.com/scafi/macro-swarm/commit/0660f77c3b26c0e1fd6d9fa2435f7f76e3fb808d))
+
 ## [1.4.0](https://github.com/scafi/macro-swarm/compare/v1.3.0...v1.4.0) (2023-12-12)
 
 
