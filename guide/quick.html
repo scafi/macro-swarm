@@ -5,15 +5,14 @@ It is based on <a href="">ScaFi</a>, a scala library for programming aggregate c
 It supports a large variety of swarm behaviors, including collective movement, shape formation, team formation, and collective planning.</p>
 
 <p>This library does not provide any simulation environment, but it is possible to use it with <a href="https://alchemistsimulator.github.io/">Alchemist</a>.
-In the <a href="/guide/alchemist.html">alchemist</a> section of the guide, we provide a quick tutorial on how to use MacroSwarm with Alchemist.</p>
+In the <a href="/macro-swarm/guide/alchemist.html">alchemist</a> section of the guide, we provide a quick tutorial on how to use MacroSwarm with Alchemist.</p>
 
 <h2 id="learning-materials">Learning Materials</h2>
 <ul>
   <li><a href="https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html">API documentation</a></li>
   <li><a href="/guide/index.html">Guide</a></li>
   <li><a href="https://www.researchgate.net/publication/371587547_MacroSwarm_A_Field-Based_Compositional_Framework_for_Swarm_Programming">COORDINATION 2023 paper</a>
-More details about the library can be found in the <a href="https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html">API documentation</a>
-and in the main concepts section of the <a href="/guide/concepts.html">guide</a>.</li>
+More details about the library can be found in the <a href="https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html">API documentation</a>.</li>
 </ul>
 
 <h2 id="example">Example</h2>
@@ -47,6 +46,7 @@ and in the main concepts section of the <a href="/guide/concepts.html">guide</a>
 
 <span class="k">class</span> <span class="nc">SimpleMovement</span> <span class="k">extends</span> <span class="nc">MacroSwarmProgram</span> <span class="c1">// define a program that supports the movement in alchemist env</span>
   <span class="k">with</span> <span class="nc">StandardSensors</span> <span class="k">with</span> <span class="nc">TimeUtils</span> <span class="c1">// standard AC API (sensing and time)</span>
+  <span class="k">with</span> <span class="nc">ScafiAlchemistSupport</span> <span class="c1">// help for alchemist</span>
   <span class="c1">// library for basic movement</span>
   <span class="k">with</span> <span class="nc">BaseMovementLib</span> <span class="o">{</span>
 
