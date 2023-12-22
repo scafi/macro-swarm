@@ -12,7 +12,7 @@ It is based on [ScaFi](), a scala library for programming aggregate computing sy
 It supports a large variety of swarm behaviors, including collective movement, shape formation, team formation, and collective planning.
 
 This library does not provide any simulation environment, but it is possible to use it with [Alchemist](https://alchemistsimulator.github.io/).
-In the [alchemist](/guide/alchemist.html) section of the guide, we provide a quick tutorial on how to use MacroSwarm with Alchemist.
+In the [alchemist](/macro-swarm/guide/alchemist.html) section of the guide, we provide a quick tutorial on how to use MacroSwarm with Alchemist.
 
 ## Learning Materials
 - [API documentation](https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html)
