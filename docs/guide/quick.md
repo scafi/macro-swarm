@@ -16,7 +16,6 @@ In the [alchemist](/macro-swarm/guide/alchemist.html) section of the guide, we p
 
 ## Learning Materials
 - [API documentation](https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html)
-- [Guide](/guide/index.html)
 - [COORDINATION 2023 paper](https://www.researchgate.net/publication/371587547_MacroSwarm_A_Field-Based_Compositional_Framework_for_Swarm_Programming)
 More details about the library can be found in the [API documentation](https://scafi.github.io/macro-swarm/api/it/unibo/scafi/index.html).
 
