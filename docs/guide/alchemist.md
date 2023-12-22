@@ -32,7 +32,7 @@ For enabling the trace, follow the following video:
         <tr>
                 <td> <a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/ConstantMovement.scala"> src/main/scala/it/unibo/scafi/examples/ConstantMovement.scala </a> </td>
             <td>A swarm of agents moving in a straight line</td>
-            <td>`./gradlew runConstantMovementGraphic`</td>
+            <td>./gradlew runConstantMovementGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -51,7 +51,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/Explore.scala">src/main/scala/it/unibo/scafi/examples/Explore.scala</a></td>
             <td>A swarm of agents exploring a fixed area</td>
-            <td>`./gradlew runConstantMovementGraphic`</td>
+            <td>./gradlew runConstantMovementGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -70,7 +70,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/ObstacleAvoidance.scala">src/main/scala/it/unibo/scafi/examples/ObstacleAvoidance.scala</a></td>
             <td>A swarm that try to avoid obstacles</td>
-            <td>`./gradlew runObstacleAvoidanceBigGraphic` or `./gradlew runObstacleAvoidanceMiddleGraphic` or `./gradlew runObstacleAvoidanceGraphic`</td>
+            <td>./gradlew runObstacleAvoidanceBigGraphic or ./gradlew runObstacleAvoidanceMiddleGraphic or ./gradlew runObstacleAvoidanceGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -89,7 +89,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/TowardsLeader.scala">src/main/scala/it/unibo/scafi/examples/TowardsLeader.scala</a></td>
             <td>Nodes go towards a sink point (a leader)</td>
-            <td>`./gradlew runTowardsLeaderGraphic`</td>
+            <td>./gradlew runTowardsLeaderGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -108,7 +108,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/BranchingExample.scala">src/main/scala/it/unibo/scafi/examples/BranchingExample.scala</a></td>
             <td>Nodes spin aroud a leader</td>
-            <td>`./gradlew runSpinAroundGraphic`</td>
+            <td>./gradlew runSpinAroundGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -127,7 +127,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/ReynoldFlock.scala">src/main/scala/it/unibo/scafi/scala/examples/ReynoldFlock.scala</a></td>
             <td>Swarm moving following reynolds rule</td>
-            <td>`./gradlew runReynoldFlockGraphic`</td>
+            <td>./gradlew runReynoldFlockGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -165,7 +165,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/TeamFormation.scala">src/main/scala/it/unibo/scafi/scala/examples/TeamFormation.scala</a></td>
             <td>A swarm that create several sub-swarm based on spatial constraints</td>
-            <td>`./gradlew runTeamFormationGraphic`</td>
+            <td>./gradlew runTeamFormationGraphic</td>
         </tr>
     </table>
     <p align="center">
@@ -184,7 +184,7 @@ For enabling the trace, follow the following video:
         <tr>
             <td><a href="https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour/tree/main/src/main/scala/it/unibo/scafi/examples/AllShape.scala">src/main/scala/it/unibo/scafi/scala/examples/AllShape</a></td>
             <td>A swarm of nodes that form several shapes</td>
-            <td>`./gradlew runAllShapeGraphic`</td>
+            <td>./gradlew runAllShapeGraphic</td>
         </tr>
     </table>
     <p align="center">
