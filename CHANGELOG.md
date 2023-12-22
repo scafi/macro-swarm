@@ -1,3 +1,22 @@
+## [1.4.3](https://github.com/scafi/macro-swarm/compare/v1.4.2...v1.4.3) (2023-12-22)
+
+
+### Dependency updates
+
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v29.3.2 ([76acd8d](https://github.com/scafi/macro-swarm/commit/76acd8d33d7b44c9df7ce469297c74b733f2b3c4))
+* **deps:** update dependency sbt/sbt to v1.9.8 ([15fcb63](https://github.com/scafi/macro-swarm/commit/15fcb63c4218d72075ac94cffcf27d666a69fbec))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.82 ([0a7deb4](https://github.com/scafi/macro-swarm/commit/0a7deb4b11b5f4f2cfbea472f64847bdf4425a22))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.83 ([ba3c153](https://github.com/scafi/macro-swarm/commit/ba3c153ac82f7a7b7095461b3311febb9ce1b2f8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.84 ([a151cb4](https://github.com/scafi/macro-swarm/commit/a151cb43c9e621fbf69b4514c75566c6b32ea202))
+
+
+### Documentation
+
+* finalize the alchemist guide ([c9d473d](https://github.com/scafi/macro-swarm/commit/c9d473d815434df45b162a25bb29954b113a6b1f))
+* fix broken links ([e42e57b](https://github.com/scafi/macro-swarm/commit/e42e57be84e6e9295d770601625ba6cbb5c92f3e))
+* fix gradlew runner ([2fe1e59](https://github.com/scafi/macro-swarm/commit/2fe1e592993608ea584596dadf1207cfa12f9c2b))
+* remove useless site ([6821d04](https://github.com/scafi/macro-swarm/commit/6821d04f208fc0ab02046f97d5d802205cd04492))
+
 ## [1.4.2](https://github.com/scafi/macro-swarm/compare/v1.4.1...v1.4.2) (2023-12-12)
 
 
