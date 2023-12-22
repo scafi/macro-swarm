@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/scafi/macro-swarm/compare/v1.4.3...v1.4.4) (2023-12-22)
+
+
+### Documentation
+
+* remove guide link ([4fc027e](https://github.com/scafi/macro-swarm/commit/4fc027ee75160ca0a63ac9a3842e82a928a84d79))
+
 ## [1.4.3](https://github.com/scafi/macro-swarm/compare/v1.4.2...v1.4.3) (2023-12-22)
 
 
