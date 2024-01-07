@@ -20,7 +20,8 @@ abstract class MacroSwarmSupport[E <: MacroSwarmSupport.Dependency](val incarnat
     with CoreMovement[E]
     with CoordinatedMovement[E]
     with LeaderBasedMovement[E]
-    with CollectivePlanner[E] {}
+    with CollectivePlanner[E]
+    with Consensus[E] {}
 
 object MacroSwarmSupport {
 
