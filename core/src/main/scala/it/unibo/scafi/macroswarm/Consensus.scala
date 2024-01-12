@@ -48,7 +48,7 @@ trait Consensus[E <: MacroSwarmSupport.Dependency] {
     def computeInitialVector(howMany: Int): List[Double] = softmaxNormalization(randomChoices(howMany))
 
     private def randomChoices(howMany: Int): List[Double] =
-      LazyList.fill(howMany)(alchemistRandomGen.nextDouble()).toList
+      LazyList.fill(howMany)(randomGenerator().nextDouble()).toList
 
     private def softmaxNormalization(vector: List[Double]): List[Double] = {
       val exps = vector.map(math.exp)
