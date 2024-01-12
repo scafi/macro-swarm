@@ -1,3 +1,22 @@
+## [1.5.0](https://github.com/scafi/macro-swarm/compare/v1.4.4...v1.5.0) (2024-01-12)
+
+
+### Features
+
+* add consensus block ([a93dbac](https://github.com/scafi/macro-swarm/commit/a93dbac5d1f91567ba6cd6a5f9e3bd275cf83f4d))
+* fix the circle formation ([8d835a7](https://github.com/scafi/macro-swarm/commit/8d835a7ab53e25bab06e018a558108dbb15d31ee))
+
+
+### Dependency updates
+
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v29.3.4 ([ca31a12](https://github.com/scafi/macro-swarm/commit/ca31a129de8e9bf8dda85118af38328511f31114))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.85 ([7454465](https://github.com/scafi/macro-swarm/commit/74544656df91cb794da5bf009b0829d786724455))
+
+
+### Bug Fixes
+
+* **core:** use randomGenerator instead of alchemsit gen ([754a6a1](https://github.com/scafi/macro-swarm/commit/754a6a148a032fe4559e98ae3850e15e4333b6e0))
+
 ## [1.4.4](https://github.com/scafi/macro-swarm/compare/v1.4.3...v1.4.4) (2023-12-22)
 
 
