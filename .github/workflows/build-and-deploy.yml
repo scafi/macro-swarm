@@ -30,7 +30,7 @@ jobs:
       group: ${{ github.workflow }}-build-${{ matrix.os }}-${{ matrix.jvm_version }}-${{ github.event.number || github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.1.3
       - name: Setup Scala and JDK
         with:
           java-version: ${{ matrix.jvm_version }}
