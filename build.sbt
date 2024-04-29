@@ -1,7 +1,7 @@
 import sbt.Keys.libraryDependencies
 
 // Constants
-val defaultScalaVersion = "2.13.13"
+val defaultScalaVersion = "2.13.14"
 
 inThisBuild(
   List(
