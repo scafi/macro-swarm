@@ -18,8 +18,8 @@ More details about the library can be found in the <a href="https://scafi.github
 
 <h3 id="requirements">Requirements</h3>
 <ul>
-  <li>Java 11</li>
-  <li>SBT</li>
+  <li>Java 11: <a href="https://openjdk.org/install/">installation guide</a></li>
+  <li>SBT: <a href="https://www.scala-sbt.org/1.x/docs/Setup.html">installation guide</a></li>
 </ul>
 
 <h3 id="steps">Steps</h3>
@@ -29,12 +29,12 @@ More details about the library can be found in the <a href="https://scafi.github
 <span class="k">lazy</span> <span class="k">val</span> <span class="nv">root</span> <span class="k">=</span> <span class="o">(</span><span class="n">project</span> <span class="n">in</span> <span class="nf">file</span><span class="o">(</span><span class="s">"."</span><span class="o">))</span>
   <span class="o">.</span><span class="py">settings</span><span class="o">(</span>
     <span class="n">name</span> <span class="o">:=</span> <span class="s">"macro-swarm-demo"</span><span class="o">,</span>
-    <span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"it.unibo.scafi"</span> <span class="o">%%</span> <span class="s">"macro-swarm-alchemist"</span> <span class="o">%</span> <span class="s">"1.4.0"</span><span class="o">,</span>
+    <span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"it.unibo.scafi"</span> <span class="o">%%</span> <span class="s">"macro-swarm-alchemist"</span> <span class="o">%</span> <span class="s">"1.5.1"</span><span class="o">,</span>
     <span class="nc">Compile</span> <span class="o">/</span> <span class="n">mainClass</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">alchemistClass</span><span class="o">),</span>
     <span class="n">run</span> <span class="o">/</span> <span class="n">mainClass</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">alchemistClass</span><span class="o">)</span>
   <span class="o">)</span>
 
-<span class="nf">addCommandAlias</span><span class="o">(</span><span class="s">"runAlchemist"</span><span class="o">,</span> <span class="s">"run src/main/yaml/main.yaml"</span><span class="o">)</span>
+<span class="nf">addCommandAlias</span><span class="o">(</span><span class="s">"runAlchemist"</span><span class="o">,</span> <span class="s">"run run src/main/yaml/main.yaml"</span><span class="o">)</span>
 </code></pre></div></div>
 
 <p>2) Create a main app like the following:</p>
@@ -84,6 +84,10 @@ More details about the library can be found in the <a href="https://scafi.github
   <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">-500</span><span class="pi">,</span> <span class="nv">-500</span><span class="pi">,</span> <span class="nv">500</span><span class="pi">,</span> <span class="nv">500</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">]</span>
   <span class="na">programs</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">*program</span><span class="pi">,</span> <span class="nv">*move</span> <span class="pi">]</span> <span class="c1"># Add the behaviour</span>
 </code></pre></div></div>
+<p>After that, typing <code class="language-plaintext highlighter-rouge">sbt runAlchemist</code> in the terminal, you should see a window with a simulation started.
+To effectively start the simulation, please press the key <kbd>p</kbd> on the keyboard.</p>
+
+<p><img src="https://user-images.githubusercontent.com/23448811/224010877-6f5c9d36-d348-4343-8b66-19f78778297e.gif" alt="" /></p>
 
 <h2 id="related-tools">Related Tools</h2>
 <ul>
