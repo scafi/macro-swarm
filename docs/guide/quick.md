@@ -45,59 +45,50 @@ addCommandAlias("runAlchemist", "run src/main/yaml/main.yaml")
 ```scala
 package example
 
-import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport._ // import all the MacroSwarm API
-import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._ // import the standard AC API
+import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport._
+import it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._
+import it.unibo.scafi.space.Point3D
 
 class SimpleMovement extends MacroSwarmProgram // define a program that supports the movement in alchemist env
   with StandardSensors with TimeUtils // standard AC API (sensing and time)
-  with ScafiAlchemistSupport // help for alchemist
+  with ScafiAlchemistSupport // helper for alchemist
   // library for basic movement
   with BaseMovementLib {
 
-  override def main(): Any =
-    brownian(1) // random movement
+  override protected def movementLogic(): Point3D = brownian()
 }
 ```
 
 3) Create a new file `src/main/yaml/main.yaml` with the following content:
 
 ```yaml
+# Define the incarnation of the simulation
 incarnation: scafi
-
-launcher: # launcher configuration, i.e., the gui that will be used
-  type: SingleRunSwingUI
-
-seeds: # seeds for the random number generator
-  scenario: 0
-  simulation: 0
-
-network-model: # example of network connection
-  type: ConnectWithinDistance
-  parameters: [350]
-
+# Define the launcher, in this case a Swing UI
+launcher: { type: SingleRunSwingUI }
+# Define how the nodes are connected, in this case within a distance of 350 units
+network-model: { type: ConnectWithinDistance, parameters: [350] }
+# Define the behaviour of the nodes
 _reactions:
-  - program: &program # define a program that will be executed by the agents, based on macro swarm
-      - time-distribution:
-          type: DiracComb
-          parameters: [ 0, 1 ]
+  - program: &program # MacroSwarm program, executed every second
+      - time-distribution: 1
         type: Event
         actions:
           - type: RunScafiProgram
             parameters: [example.SimpleMovement, 1.0]
       - program: send
-  - move: &move # define the actuation, that use the data produced by macro swarm
-      - time-distribution:
-          type: DiracComb
-          parameters: [ 0, 1 ]
+  - move: &move # Related actuation, executed every second
+      - time-distribution: 1
         type: Event
         actions: { type: MoveToTarget, parameters: [ destination, 10 ] }
-
+# Define how to deploy the program, in this case in a grid
+# which starts from (-500, -500) and ends in (500, 500) with a step of (300, 300).
+# 25 is the variance of the position of the nodes in the grid (randomness).
+# The program is deployed in a 4x4 grid.
 deployments:
   type: Grid
-  parameters: [0, 0, 1000, 1000, 300, 300, 25, 25]
-  programs:
-    - *program
-    - *move
+  parameters: [-500, -500, 500, 500, 300, 300, 25, 25]
+  programs: [ *program, *move ] # Add the behaviour
 ```
 
 
