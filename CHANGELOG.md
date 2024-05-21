@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/scafi/macro-swarm/compare/v1.5.1...v1.5.2) (2024-05-21)
+
+
+### Documentation
+
+* more details in how to run a simple simulation ([89120b2](https://github.com/scafi/macro-swarm/commit/89120b2ec1677a07221d65df84fe468b2763e8c2))
+
 ## [1.5.1](https://github.com/scafi/macro-swarm/compare/v1.5.0...v1.5.1) (2024-05-21)
 
 
