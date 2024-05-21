@@ -40,58 +40,49 @@ More details about the library can be found in the <a href="https://scafi.github
 <p>2) Create a main app like the following:</p>
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">example</span>
 
-<span class="k">import</span> <span class="nn">it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport._</span> <span class="c1">// import all the MacroSwarm API</span>
-<span class="k">import</span> <span class="nn">it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._</span> <span class="c1">// import the standard AC API</span>
+<span class="k">import</span> <span class="nn">it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport._</span>
+<span class="k">import</span> <span class="nn">it.unibo.scafi.macroswarm.MacroSwarmAlchemistSupport.incarnation._</span>
+<span class="k">import</span> <span class="nn">it.unibo.scafi.space.Point3D</span>
 
 <span class="k">class</span> <span class="nc">SimpleMovement</span> <span class="k">extends</span> <span class="nc">MacroSwarmProgram</span> <span class="c1">// define a program that supports the movement in alchemist env</span>
   <span class="k">with</span> <span class="nc">StandardSensors</span> <span class="k">with</span> <span class="nc">TimeUtils</span> <span class="c1">// standard AC API (sensing and time)</span>
-  <span class="k">with</span> <span class="nc">ScafiAlchemistSupport</span> <span class="c1">// help for alchemist</span>
+  <span class="k">with</span> <span class="nc">ScafiAlchemistSupport</span> <span class="c1">// helper for alchemist</span>
   <span class="c1">// library for basic movement</span>
   <span class="k">with</span> <span class="nc">BaseMovementLib</span> <span class="o">{</span>
 
-  <span class="k">override</span> <span class="k">def</span> <span class="nf">main</span><span class="o">()</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span>
-    <span class="nf">brownian</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// random movement</span>
+  <span class="k">override</span> <span class="k">protected</span> <span class="k">def</span> <span class="nf">movementLogic</span><span class="o">()</span><span class="k">:</span> <span class="kt">Point3D</span> <span class="o">=</span> <span class="nf">brownian</span><span class="o">()</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
 <p>3) Create a new file <code class="language-plaintext highlighter-rouge">src/main/yaml/main.yaml</code> with the following content:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">incarnation</span><span class="pi">:</span> <span class="s">scafi</span>
-
-<span class="na">launcher</span><span class="pi">:</span> <span class="c1"># launcher configuration, i.e., the gui that will be used</span>
-  <span class="na">type</span><span class="pi">:</span> <span class="s">SingleRunSwingUI</span>
-
-<span class="na">seeds</span><span class="pi">:</span> <span class="c1"># seeds for the random number generator</span>
-  <span class="na">scenario</span><span class="pi">:</span> <span class="m">0</span>
-  <span class="na">simulation</span><span class="pi">:</span> <span class="m">0</span>
-
-<span class="na">network-model</span><span class="pi">:</span> <span class="c1"># example of network connection</span>
-  <span class="na">type</span><span class="pi">:</span> <span class="s">ConnectWithinDistance</span>
-  <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">350</span><span class="pi">]</span>
-
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Define the incarnation of the simulation</span>
+<span class="na">incarnation</span><span class="pi">:</span> <span class="s">scafi</span>
+<span class="c1"># Define the launcher, in this case a Swing UI</span>
+<span class="na">launcher</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">type</span><span class="pi">:</span> <span class="nv">SingleRunSwingUI</span> <span class="pi">}</span>
+<span class="c1"># Define how the nodes are connected, in this case within a distance of 350 units</span>
+<span class="na">network-model</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">type</span><span class="pi">:</span> <span class="nv">ConnectWithinDistance</span><span class="pi">,</span> <span class="nv">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">350</span><span class="pi">]</span> <span class="pi">}</span>
+<span class="c1"># Define the behaviour of the nodes</span>
 <span class="na">_reactions</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">program</span><span class="pi">:</span> <span class="nl">&amp;program</span> <span class="c1"># define a program that will be executed by the agents, based on macro swarm</span>
-      <span class="pi">-</span> <span class="na">time-distribution</span><span class="pi">:</span>
-          <span class="na">type</span><span class="pi">:</span> <span class="s">DiracComb</span>
-          <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">0</span><span class="pi">,</span> <span class="nv">1</span> <span class="pi">]</span>
+  <span class="pi">-</span> <span class="na">program</span><span class="pi">:</span> <span class="nl">&amp;program</span> <span class="c1"># MacroSwarm program, executed every second</span>
+      <span class="pi">-</span> <span class="na">time-distribution</span><span class="pi">:</span> <span class="m">1</span>
         <span class="na">type</span><span class="pi">:</span> <span class="s">Event</span>
         <span class="na">actions</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">RunScafiProgram</span>
             <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">example.SimpleMovement</span><span class="pi">,</span> <span class="nv">1.0</span><span class="pi">]</span>
       <span class="pi">-</span> <span class="na">program</span><span class="pi">:</span> <span class="s">send</span>
-  <span class="pi">-</span> <span class="na">move</span><span class="pi">:</span> <span class="nl">&amp;move</span> <span class="c1"># define the actuation, that use the data produced by macro swarm</span>
-      <span class="pi">-</span> <span class="na">time-distribution</span><span class="pi">:</span>
-          <span class="na">type</span><span class="pi">:</span> <span class="s">DiracComb</span>
-          <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">0</span><span class="pi">,</span> <span class="nv">1</span> <span class="pi">]</span>
+  <span class="pi">-</span> <span class="na">move</span><span class="pi">:</span> <span class="nl">&amp;move</span> <span class="c1"># Related actuation, executed every second</span>
+      <span class="pi">-</span> <span class="na">time-distribution</span><span class="pi">:</span> <span class="m">1</span>
         <span class="na">type</span><span class="pi">:</span> <span class="s">Event</span>
         <span class="na">actions</span><span class="pi">:</span> <span class="pi">{</span> <span class="nv">type</span><span class="pi">:</span> <span class="nv">MoveToTarget</span><span class="pi">,</span> <span class="nv">parameters</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">destination</span><span class="pi">,</span> <span class="nv">10</span> <span class="pi">]</span> <span class="pi">}</span>
-
+<span class="c1"># Define how to deploy the program, in this case in a grid</span>
+<span class="c1"># which starts from (-500, -500) and ends in (500, 500) with a step of (300, 300).</span>
+<span class="c1"># 25 is the variance of the position of the nodes in the grid (randomness).</span>
+<span class="c1"># The program is deployed in a 4x4 grid.</span>
 <span class="na">deployments</span><span class="pi">:</span>
   <span class="na">type</span><span class="pi">:</span> <span class="s">Grid</span>
-  <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">0</span><span class="pi">,</span> <span class="nv">0</span><span class="pi">,</span> <span class="nv">1000</span><span class="pi">,</span> <span class="nv">1000</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">]</span>
-  <span class="na">programs</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="nv">*program</span>
-    <span class="pi">-</span> <span class="nv">*move</span>
+  <span class="na">parameters</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">-500</span><span class="pi">,</span> <span class="nv">-500</span><span class="pi">,</span> <span class="nv">500</span><span class="pi">,</span> <span class="nv">500</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">300</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">,</span> <span class="nv">25</span><span class="pi">]</span>
+  <span class="na">programs</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">*program</span><span class="pi">,</span> <span class="nv">*move</span> <span class="pi">]</span> <span class="c1"># Add the behaviour</span>
 </code></pre></div></div>
 
 <h2 id="related-tools">Related Tools</h2>
