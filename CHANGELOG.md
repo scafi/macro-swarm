@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/scafi/macro-swarm/compare/v1.5.2...v1.5.3) (2024-05-21)
+
+
+### Bug Fixes
+
+* store velocity as an array ([73132d2](https://github.com/scafi/macro-swarm/commit/73132d2fd8b8d9b6d7eb5429ce1b457e7f05f20d))
+
 ## [1.5.2](https://github.com/scafi/macro-swarm/compare/v1.5.1...v1.5.2) (2024-05-21)
 
 
