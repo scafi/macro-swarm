@@ -22,8 +22,8 @@ More details about the library can be found in the [API documentation](https://s
 ## Example
 
 ### Requirements
-- Java 11
-- SBT
+- Java 11: [installation guide](https://openjdk.org/install/)
+- SBT: [installation guide](https://www.scala-sbt.org/1.x/docs/Setup.html)
 
 ### Steps
 1) Create a new SBT project with the following `build.sbt` file:
@@ -33,12 +33,12 @@ val alchemistClass = "it.unibo.alchemist.Alchemist"
 lazy val root = (project in file("."))
   .settings(
     name := "macro-swarm-demo",
-    libraryDependencies += "it.unibo.scafi" %% "macro-swarm-alchemist" % "1.4.0",
+    libraryDependencies += "it.unibo.scafi" %% "macro-swarm-alchemist" % "1.5.1",
     Compile / mainClass := Some(alchemistClass),
     run / mainClass := Some(alchemistClass)
   )
 
-addCommandAlias("runAlchemist", "run src/main/yaml/main.yaml")
+addCommandAlias("runAlchemist", "run run src/main/yaml/main.yaml")
 ```
 
 2) Create a main app like the following:
@@ -90,6 +90,10 @@ deployments:
   parameters: [-500, -500, 500, 500, 300, 300, 25, 25]
   programs: [ *program, *move ] # Add the behaviour
 ```
+After that, typing `sbt runAlchemist` in the terminal, you should see a window with a simulation started.
+To effectively start the simulation, please press the key <kbd>p</kbd> on the keyboard.
+
+![](https://user-images.githubusercontent.com/23448811/224010877-6f5c9d36-d348-4343-8b66-19f78778297e.gif)
 
 
 ## Related Tools
