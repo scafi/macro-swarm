@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/scafi/macro-swarm/compare/v1.5.4...v1.5.5) (2024-05-22)
+
+
+### Documentation
+
+* remove repeated link about API ([e590da0](https://github.com/scafi/macro-swarm/commit/e590da0c3b7f85492a760d7708ff444a5e0024e5))
+
 ## [1.5.4](https://github.com/scafi/macro-swarm/compare/v1.5.3...v1.5.4) (2024-05-22)
 
 
