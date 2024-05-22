@@ -1,3 +1,11 @@
+## [1.5.4](https://github.com/scafi/macro-swarm/compare/v1.5.3...v1.5.4) (2024-05-22)
+
+
+### Documentation
+
+* change the owner (scafi org) ([f4b17fa](https://github.com/scafi/macro-swarm/commit/f4b17fa4780d1aeb58fe8e070ad942b20cf91b6e))
+* update the version and link to the right repository ([5043fc7](https://github.com/scafi/macro-swarm/commit/5043fc771ea7b3f2212d5167bfc6f7cb1495fc66))
+
 ## [1.5.3](https://github.com/scafi/macro-swarm/compare/v1.5.2...v1.5.3) (2024-05-21)
 
 
