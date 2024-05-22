@@ -33,7 +33,7 @@ val alchemistClass = "it.unibo.alchemist.Alchemist"
 lazy val root = (project in file("."))
   .settings(
     name := "macro-swarm-demo",
-    libraryDependencies += "it.unibo.scafi" %% "macro-swarm-alchemist" % "1.5.1",
+    libraryDependencies += "it.unibo.scafi" %% "macro-swarm-alchemist" % "1.5.3",
     Compile / mainClass := Some(alchemistClass),
     run / mainClass := Some(alchemistClass)
   )
@@ -62,10 +62,12 @@ class SimpleMovement extends MacroSwarmProgram // define a program that supports
 3) Create a new file `src/main/yaml/main.yaml` with the following content:
 
 ```yaml
-# Define the incarnation of the simulation
 incarnation: scafi
-# Define the launcher, in this case a Swing UI
-launcher: { type: SingleRunSwingUI }
+# Define the launcher, standard one
+launcher: { parameters: { batch: [], autoStart: false } }
+# Attach the GUI to the simulator
+monitors: { type: SwingGUI, parameters: { graphics: src/main/resources/effect.json } }
+
 # Define how the nodes are connected, in this case within a distance of 350 units
 network-model: { type: ConnectWithinDistance, parameters: [350] }
 # Define the behaviour of the nodes

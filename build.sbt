@@ -63,5 +63,5 @@ lazy val `macro-swarm` = project
     micrositeDescription := "A swarm programming framework based on aggregate computing!",
     micrositeAuthor := "cric96",
     micrositeDocumentationUrl := "guide/quick.html",
-    micrositeGithubOwner := "cric96"
+    micrositeGithubOwner := "macro-swarm"
   )
