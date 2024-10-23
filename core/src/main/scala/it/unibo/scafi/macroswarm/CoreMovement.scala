@@ -34,7 +34,7 @@ trait CoreMovement[E <: MacroSwarmSupport.Dependency] {
       *   the random vector
       */
     def brownian(scale: Double = 1.0): Point3D =
-      randomInNegativeUnitSphere(scale)
+      randomInNormalDistribution(scale)
 
     /** Maintains a trajectory for a given time, then changes it.
       * @param velocityGenerator
@@ -83,6 +83,13 @@ trait CoreMovement[E <: MacroSwarmSupport.Dependency] {
       val y = randomGenerator().nextDouble() * 2 - 1
       val z = randomGenerator().nextDouble() * 2 - 1
       Point3D(x * scale, y * scale, z * scale)
+    }
+
+    def randomInNormalDistribution(scala: Double): Point3D = {
+      val angle = randomGenerator().nextDouble() * 2 * Math.PI
+      val x = Math.cos(angle)
+      val y = Math.sin(angle)
+      Point3D(x * scala, y * scala, 0)
     }
   }
 
