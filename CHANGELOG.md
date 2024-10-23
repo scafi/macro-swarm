@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/scafi/macro-swarm/compare/v1.6.0...v1.7.0) (2024-10-23)
+
+### Features
+
+* update brownian movement ([6b1bc0b](https://github.com/scafi/macro-swarm/commit/6b1bc0b445b4670e027f563f85db00908cbd0674))
+
 ## [1.6.0](https://github.com/scafi/macro-swarm/compare/v1.5.5...v1.6.0) (2024-10-23)
 
 ### Features
