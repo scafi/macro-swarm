@@ -42,7 +42,7 @@ lazy val alchemist = project
     organization := "it.unibo.scafi",
     name := "macro-swarm-alchemist",
     libraryDependencies += "it.unibo.alchemist" % "alchemist-incarnation-scafi" % "37.1.4",
-    libraryDependencies += "it.unibo.alchemist" % "alchemist-swingui" % "37.1.3"
+    libraryDependencies += "it.unibo.alchemist" % "alchemist-swingui" % "37.1.4"
   )
 
 lazy val `macro-swarm` = project
