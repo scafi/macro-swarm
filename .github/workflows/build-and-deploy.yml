@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v6.0.2
-      - name: Generate bindings for polyglot api
+      - name: Check sbt build process
         uses: nicolasfara/build-check-deploy-sbt-action@1.0.39
         with:
           check-command: true
