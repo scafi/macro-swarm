@@ -82,6 +82,20 @@ jobs:
           maven-central-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           signing-key: ${{ secrets.SIGNING_KEY }}
           # signing-password: ${{ secrets.SIGNING_PASSWORD }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 4.0.5
+      - run: gem install 'jekyll:4.2.1' bundler
+      - name: Check Jekyll version
+        run: jekyll --version
+      - name: Build website
+        run: sbt makeMicrosite; sbt doc
+      - name: Prepare publishing directory
+        run: cp -r core/target/scala-2.13/api target/site/api
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: target/site
   success:
     runs-on: ubuntu-24.04
     needs:
