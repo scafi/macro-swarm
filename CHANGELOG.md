@@ -1,3 +1,41 @@
+## [1.9.0](https://github.com/scafi/macro-swarm/compare/v1.8.0...v1.9.0) (2026-06-19)
+
+### Features
+
+* add constant for molecule constants in alchemist simulation ([53ac3f7](https://github.com/scafi/macro-swarm/commit/53ac3f74a9788525b1ba553775251d268b98d8c5))
+
+### Dependency updates
+
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.47 ([#588](https://github.com/scafi/macro-swarm/issues/588)) ([3cabc90](https://github.com/scafi/macro-swarm/commit/3cabc90de439492bbd29387809c186435168606d))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.48 ([#591](https://github.com/scafi/macro-swarm/issues/591)) ([4cb4bb0](https://github.com/scafi/macro-swarm/commit/4cb4bb097aa2e27463d21192b6ee52860ccceb54))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.49 ([#594](https://github.com/scafi/macro-swarm/issues/594)) ([5869f30](https://github.com/scafi/macro-swarm/commit/5869f30c1226eb32b4f30020a07f2211c9ce55b3))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.52 ([#596](https://github.com/scafi/macro-swarm/issues/596)) ([44bd8ef](https://github.com/scafi/macro-swarm/commit/44bd8efc29d35d11c591c1aa1ee2533440b1c9b5))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.53 ([#599](https://github.com/scafi/macro-swarm/issues/599)) ([e70294c](https://github.com/scafi/macro-swarm/commit/e70294c3114c1f560d56fa851a631b36d43217d4))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.54 ([#601](https://github.com/scafi/macro-swarm/issues/601)) ([e3a345a](https://github.com/scafi/macro-swarm/commit/e3a345a4ad952d301eafe49f230b7feff1dda07f))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.55 ([#603](https://github.com/scafi/macro-swarm/issues/603)) ([6e68b16](https://github.com/scafi/macro-swarm/commit/6e68b163a2d636a71952057d5ab5ba0f005f6587))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.0.56 ([#607](https://github.com/scafi/macro-swarm/issues/607)) ([996c242](https://github.com/scafi/macro-swarm/commit/996c24238d20677750e858f1bd3580dbee77c0c9))
+* **deps:** update dependency it.unibo.alchemist:alchemist-incarnation-scafi to v43.1.4 ([#611](https://github.com/scafi/macro-swarm/issues/611)) ([34b634a](https://github.com/scafi/macro-swarm/commit/34b634a9e2c4db0fe21c6abbf1de746f295de22b))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.47 ([#589](https://github.com/scafi/macro-swarm/issues/589)) ([22e1d66](https://github.com/scafi/macro-swarm/commit/22e1d66d77c9d0a68055d747d6a310eca58546d6))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.48 ([#592](https://github.com/scafi/macro-swarm/issues/592)) ([046cd65](https://github.com/scafi/macro-swarm/commit/046cd65deba4fe50b2474f992f6830ebe1473e6a))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.49 ([#595](https://github.com/scafi/macro-swarm/issues/595)) ([487b8eb](https://github.com/scafi/macro-swarm/commit/487b8eb3bd27b4d93abcce3dc0d9d1ca7394fb0e))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.52 ([#597](https://github.com/scafi/macro-swarm/issues/597)) ([dbba447](https://github.com/scafi/macro-swarm/commit/dbba4471114b8c7db9c9f89f2e6b108963057fa7))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.53 ([#600](https://github.com/scafi/macro-swarm/issues/600)) ([c07c0d0](https://github.com/scafi/macro-swarm/commit/c07c0d07f3fa8d71b1eb74601be8148cf3f12180))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.54 ([#602](https://github.com/scafi/macro-swarm/issues/602)) ([bfcf0f9](https://github.com/scafi/macro-swarm/commit/bfcf0f94a4acf398dfd395853417e7de771c0bc1))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.55 ([#604](https://github.com/scafi/macro-swarm/issues/604)) ([8b40b1a](https://github.com/scafi/macro-swarm/commit/8b40b1afec32c33138c9b0a2ef236de3fda9b8fa))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.0.56 ([#608](https://github.com/scafi/macro-swarm/issues/608)) ([beff695](https://github.com/scafi/macro-swarm/commit/beff69575f7f617bfe2c72865dcad90fe12dc081))
+* **deps:** update dependency it.unibo.alchemist:alchemist-swingui to v43.1.4 ([#612](https://github.com/scafi/macro-swarm/issues/612)) ([a0e6f1a](https://github.com/scafi/macro-swarm/commit/a0e6f1ac915d09814781f236d787e5a318eb99a7))
+* **deps:** update dependency sbt/sbt to v1.12.12 ([#609](https://github.com/scafi/macro-swarm/issues/609)) ([445c495](https://github.com/scafi/macro-swarm/commit/445c495a96a32c5bb834424cc6d1764c82274d79))
+* **deps:** update dependency scalafmt to v3.11.1 ([#590](https://github.com/scafi/macro-swarm/issues/590)) ([2de4525](https://github.com/scafi/macro-swarm/commit/2de4525913e95eb4365251df62a83fa4a8eaaf6f))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6.0.3 ([#605](https://github.com/scafi/macro-swarm/issues/605)) ([6718d7a](https://github.com/scafi/macro-swarm/commit/6718d7a8d23e2d2bf27c7f3c85616ba2ba6d254c))
+* **deps:** update actions/checkout action to v7 ([#613](https://github.com/scafi/macro-swarm/issues/613)) ([3e319dd](https://github.com/scafi/macro-swarm/commit/3e319dd17f29cadbb5af56ecbff5b3e9cf4d6763))
+* **deps:** update danysk/action-checkout action to v0.2.29 ([#606](https://github.com/scafi/macro-swarm/issues/606)) ([f9e592b](https://github.com/scafi/macro-swarm/commit/f9e592b45ae5d4af90918210b87beb97e69453f8))
+* **deps:** update danysk/action-checkout action to v0.2.30 ([#614](https://github.com/scafi/macro-swarm/issues/614)) ([101ffa7](https://github.com/scafi/macro-swarm/commit/101ffa7802ab174b14bd798eb8947f874171505d))
+* **deps:** update dependency ruby to v4.0.4 ([#593](https://github.com/scafi/macro-swarm/issues/593)) ([a9939b2](https://github.com/scafi/macro-swarm/commit/a9939b2358c969a5f307e6c9a60a77032590bd45))
+* **deps:** update dependency ruby to v4.0.5 ([#598](https://github.com/scafi/macro-swarm/issues/598)) ([b0debf3](https://github.com/scafi/macro-swarm/commit/b0debf3ac43aed058bf62cf016c42cfb9bcf15ee))
+
 ## [1.8.0](https://github.com/scafi/macro-swarm/compare/v1.7.0...v1.8.0) (2026-05-05)
 
 ### Features
