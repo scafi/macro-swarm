@@ -90,7 +90,7 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version-file: package.json
       - name: Run Semantic-Release
         run: |
           npm install
