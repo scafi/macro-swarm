@@ -1,3 +1,14 @@
+## [1.9.1](https://github.com/scafi/macro-swarm/compare/v1.9.0...v1.9.1) (2026-06-19)
+
+### Bug Fixes
+
+* **ci:** building process name ([21bab0b](https://github.com/scafi/macro-swarm/commit/21bab0bda5e41ae3364fb6bcf733ce810b78de47))
+
+### Build and continuous integration
+
+* fix ci-cd uses ([42b5354](https://github.com/scafi/macro-swarm/commit/42b53548c175f86d9ff9e80fa1b2a03dcab3e3a0))
+* update the release workflow ([a5aefce](https://github.com/scafi/macro-swarm/commit/a5aefce22db3439d323579234f46d8c841347827))
+
 ## [1.9.0](https://github.com/scafi/macro-swarm/compare/v1.8.0...v1.9.0) (2026-06-19)
 
 ### Features
