@@ -14,8 +14,14 @@ object MacroSwarmAlchemistSupport extends MacroSwarmSupport(ScafiIncarnationForA
       val previousPosition = alchemistEnvironment.getPosition(alchemistEnvironment.getNodeByID(mid()))
       val target = previousPosition.plus(Array(velocity.x, velocity.y))
       target.asInstanceOf[Position[_]]
-      node.put("velocity", Array(velocity.x, velocity.y))
-      node.put("destination", target)
+      node.put(VelocityMolecule, Array(velocity.x, velocity.y))
+      node.put(DestinationMolecule, target)
     }
   }
+
+  /** The molecules used to communicate the velocity and destination of the agent. */
+  val VelocityMolecule: String = "velocity"
+
+  /** The molecules used to communicate the velocity and destination of the agent. */
+  val DestinationMolecule: String = "destination"
 }
