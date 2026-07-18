@@ -84,7 +84,7 @@ jobs:
           # signing-password: ${{ secrets.SIGNING_PASSWORD }}
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 4.0.5
+          ruby-version: 4.0.6
       - run: gem install 'jekyll:4.2.1' bundler
       - name: Check Jekyll version
         run: jekyll --version
