@@ -5,7 +5,7 @@ on:
 
 jobs:
   prepare:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v6.1.0
@@ -97,7 +97,7 @@ jobs:
         with:
           folder: target/site
   success:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs:
       - release
       - build
